@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Even or Odd</h2>
+    <label for="input_Number">Enter a Number : </label>
+    <input type ="number" id="input_Number" placeholder="Enter a number" min="0"><br><br>
+    <button type="submit" value="clickme" id ="button_Submit" onclick="evenOrOdd()">Click Me</button><br><br>
+    <p id="evenOrOddText"></p>
+    <script>
+        function evenOrOdd(){
+            debugger;
+            var num = document.getElementById("input_Number");
+            var para = document.getElementById("evenOrOddText");
+            if(num.value % 2 == 0){
+                alert("Even");
+            }else{
+                alert("Odd");
+            }
+        }
+    </script>
+ 
+</body>
+</html>

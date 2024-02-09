@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension In Alert</title>
+</head>
+<body>
+    <label for="input_File">Attach a File: </label>
+    <input type="file" id="input_File"><br><br>
+    <button id="button_SubmitFile" value="submit" onclick="fileExtension()">Submit</button>
+    <script>
+        function fileExtension(){
+            debugger;
+            var fileName = document.getElementById("input_File").value;
+            var extension = fileName.split(".").pop();
+            alert(`Extension is: ${extension}`)
+        }
+    </script>
+</body>
+</html>
+
+          

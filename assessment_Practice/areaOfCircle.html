@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Circle</title>
+</head>
+<body>
+    <h2>Area of Circle</h2>
+    <label>Enter Radius: </label>
+    <input type="text" placeholder="Radius" id="input_Radius" /><br><br>
+    <button id="button_calculateRadius" onclick="calculateRadius()">Calculate</button>
+    <script>
+        function calculateRadius(){
+            debugger;
+           var radius = document.getElementById("input_Radius").value;
+           var areaOfCircle = Math.PI * radius ** 2;
+           alert(`Area of circle with radius ${radius} is ${areaOfCircle}`);
+        }
+    </script>
+</body>
+</html>

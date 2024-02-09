@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="input_Name">Enter your name : </label> &nbsp;&nbsp;
+    <input id="input_Name" type="text" placeholder="Enter Name"><br><br>
+    <button type="submit" id="button_Capitalize" onclick="capitalizeMe()">Capitalize</button>
+    <p id="text_Name"></p>
+    <script>
+        function capitalizeMe(){
+            debugger;
+            var inputValue = document.getElementById("input_Name").value;
+            var capitalizeValue = inputValue[0].toUpperCase()+inputValue.slice(1);
+            alert(capitalizeValue);
+            document.getElementById("input_Name").value="";
+        }
+    </script>
+</body>
+</html>

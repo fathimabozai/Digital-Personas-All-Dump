@@ -1,0 +1,36 @@
+body{
+    opacity: 0.5px;
+    font-family: courier;
+}
+h1{
+    text-align: center;
+    align-items: center;
+    color: rgb(25, 25, 24);
+}
+header{
+    background-color: #7ca9c2;
+}
+.linksBar {
+    /* background-color: rgb(247, 211, 165); */
+    padding : 10px;    
+    float: right;
+}
+a{
+    padding-left: 5px;
+    font-weight: bold;
+    font-family: verdana;
+    text-decoration: none;
+    color: rgb(248, 246, 250);
+}
+pre{
+    color: rgb(2, 173, 247);
+    font-weight: bolder;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 200px;    
+}
+img {
+float: right;
+padding-right: 10%;
+margin-top: 200px;
+}

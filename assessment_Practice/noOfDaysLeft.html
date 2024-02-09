@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Left</title>
+    <style>
+        body{
+            background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdHAyMDYtMDA2MS5qcGc.jpg");
+        }
+        #button_Calculate_Days_Left{
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <button type="submit" value="clickme" id="button_Calculate_Days_Left" onclick="calcuteDaysLeft()">Days Left for Feeha's Birthday</button>
+    </center>
+    <script>
+        function calcuteDaysLeft()
+        {
+            debugger;
+           var today = new Date();
+           var year = today.getFullYear();
+           //month feb and date crossed
+           if(today.getMonth()==1 && today.getDate() == 10){
+                alert("Today is your Birthday");
+           }else if(today.getMonth()== 1 && today.getDate()>10){
+                //next year as birthday crossed
+                year = year + 1;
+           }else{
+                //birthday not reached
+                var birthdayDate = new Date(year, 1, 10);
+                var time = 1000*60*60*24;
+                var remgDays = Math.ceil((birthdayDate.getTime() - today.getTime())/time);
+                alert(remgDays);
+           }
+           
+        }
+        // var today = new Date();
+// var birthdayYear = today.getFullYear();
+ 
+// if(today.getMonth() == 1 && today.getDate() >10){
+//     birthdayYear += 1;
+// }
+// var birthdayDate = new Date(birthdayYear, 1, 10);
+// var time= 1000*60*60*24;
+
+// var remainingDays = Math.ceil((birthdayDate.getTime() - today.getTime())/time);
+// alert(`Days left for feeha's Birthday ${remainingDays}`);
+    </script>
+
+</body>
+
+</html>
