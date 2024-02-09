@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML STATIC TABLES</title>
+</head>
+<style>
+    table{        
+        border-color: rgb(13, 13, 14);  
+        color: rgb(42, 42, 43);
+       
+    }
+    th{ 
+        background-color: rgb(135, 147, 254);       
+        color:rgb(247, 243, 243);
+        border-radius: 5px;
+        border-style: dashed;
+    }
+    td{  
+        background-color: rgb(232, 232, 228);      
+        font-size: small;
+        border-color: rgb(234, 99, 3);
+        border-style: dotted;
+    }
+   
+</style>
+<body>
+    
+    <table border="2">
+        
+        <caption>STATIC HTML TABLE</caption>
+
+        <tr>
+            <th>Purchase Order: PO859647</th>
+            <th colspan="3">Tutorial Brain:29th DEC 2023</th>
+        </tr>
+        <tr>
+            <td colspan="1"><strong>Vendor:</strong><br>
+                Amazon Pvt Ltd,<br>
+                XYZ Street,<br>
+                HYDERABAD,<br>
+                500098.</td>
+            <td colspan="3"><strong>Ship To:</strong><br>
+                B M FATHIMA KHATOON,<br>
+                RK Street,<br>
+                KURNOOL,<br>
+                518001.
+            </td>
+        </tr>
+        <tr>
+            <th><b>Qty.</b></th>
+            <th><b>Item Code.</b></th>
+            <th><b>Description</b></th>
+            <th><b>Unit Price</b></th>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>ICPC1001</td>
+            <td>Pencils</td>
+            <td>20.00</td>
+        </tr>
+        <tr>
+            <td>180</td>
+            <td>ICPN1002</td>
+            <td>Pens</td>
+            <td>100.00</td>
+        </tr>
+        <tr>
+            <td>250</td>
+            <td>ICNB1003</td>
+            <td>NoteBooks</td>
+            <td>70.00</td>
+        </tr>
+        <tr>
+            <td colspan="2">SubTotal</td>
+            <td colspan="2">190.00</td>
+        </tr>
+        <tr>
+            <td>GST</td>
+            <td>5%</td>
+            <td colspan="2">9.50</td>
+        </tr>
+        <tr>
+            <td colspan="2">Grand Total</td>
+            <td colspan="2">$199.50</td>
+        </tr>
+    </table>
+   
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="displayData()">Data</button>
+    <script>
+        var cars = [
+            {
+                "companyName" : "Hyundai",
+                "manufactureYear" : 2011,
+                "fourWheeler" : true,
+                "color" : "Red"
+        },
+        {
+                "companyName" : "Kia",
+                "manufactureYear" : 2012,
+                "fourWheeler" : false,
+                "color" : "Orange"
+        },
+        {
+                "companyName" : "Maruti",
+                "manufactureYear" : 1994,
+                "fourWheeler" : true,
+                "color" : "Yellow"
+        },
+        {
+                "companyName" : "Mahindra",
+                "manufactureYear" : 2012,
+                "fourWheeler" : true,
+                "color" : "Magenta"
+        },
+        {
+                "companyName" : "Tata",
+                "manufactureYear" : 2008,
+                "fourWheeler" : true,
+                "color" : "Red"
+        },
+        {
+                "companyName" : "Benz",
+                "manufactureYear" : 2009,
+                "fourWheeler" : false,
+                "color" : "Cyan"
+        },
+        {
+                "companyName" : "Toyota",
+                "manufactureYear" : 2001,
+                "fourWheeler" : true,
+                "color" : "Purple"
+        },
+        {
+                "companyName" : "Volvo",
+                "manufactureYear" : 2014,
+                "fourWheeler" : false,
+                "color" : "Orange"
+        },
+        {
+                "companyName" : "Audi",
+                "manufactureYear" : 2003,
+                "fourWheeler" : true,
+                "color" : "Beige"
+        },
+        {
+                "companyName" : "Huston",
+                "manufactureYear" : 2002,
+                "fourWheeler" : true,
+                "color" : "Gray"
+        }
+    ];
+    function displayData(){
+        cars.forEach(item => {
+                // if(item.companyName === "Audi"){
+                        console.log(item);
+                // }
+        })
+        // var index = cars.findIndex(item => item.companyName === "Volvo");
+        // console.log(index);
+    }
+    </script>
+</body>
+</html>

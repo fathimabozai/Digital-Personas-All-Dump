@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object To String</title>
+</head>
+<body>
+    <p>Employee Object will be changed into String, on clicking the below button!</p>
+    <button id="button_Click" type="submit" onclick ="changeObjToString()">Change OBJ to String</button>
+    <p>Result will be displayed in alert</p>
+    <script>
+        function changeObjToString(){
+            var Employee = {
+            name : "Rahath",
+            id : "EID0505",
+            age : 29,
+            city : "Hyderabad"
+        }
+        var Student = {
+            name : "Fathima",
+            id : "DP0505",
+            age : 28,
+            city : "Hyderabad"
+        }
+        const string = JSON.stringify(Employee);
+        alert(`Object converted into String is:\n${string} \n This is an Object named Student, ${Student.name}`);        
+        }
+    </script>
+    
+</body>
+</html>

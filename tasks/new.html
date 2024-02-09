@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+   <h1 id="header">STUDENT FORM</h1>
+   <div>
+   <style>
+#header{
+    text-align: center;
+    background-color: aqua;
+}
+#F_Name{
+    margin-inline-start: 10px;
+    margin-inline-end: 70px;
+    color: blue;
+}
+#L_Name{
+    margin-inline-start: 20px;
+    margin-inline-end: 30px;
+    color: blue;
+}
+#S_Id{
+    margin-inline-start: 10px;
+    margin-inline-end: 75px;
+    color: blue;
+}
+#Gender{
+    margin-inline-start: 10px;
+    margin-inline-end: 101px;
+    color: blue;
+}
+#D_O_B{
+    margin-inline-start: 10px;
+    margin-inline-end: 50px;
+    color: blue;
+}
+#Email{
+    margin-inline-start: 10px;
+    margin-inline-end: 91px;
+    color: blue;
+}
+#Course{
+    margin-inline-start: 10px;
+    margin-inline-end: 104px;
+    color: blue;
+}
+#Clg_Name{
+    margin-inline-start: 10px;
+    margin-inline-end: 50px;
+    color: blue;
+}
+#My_File{
+    margin-inline-start: 10px;
+    margin-inline-end: 34px;
+    color: blue;
+}
+#Button{
+    margin-left: 190px;
+}
+#S_Details{
+    align-items: center;
+    display: flex;
+    column-gap: 0px;
+   border: 2px solid;
+   margin: 50px;
+    #left{
+        background-color: chartreuse;
+        width: 800px;
+        height: 500px;
+        
+    }
+    #right{
+        background-color: blueviolet;
+        width: 800px;
+        height: 500px;
+    }
+}
+   </style>
+   </div>
+    </head>
+    <body style="background-color: darkorange;">
+        <div id="S_Details">
+        <div id="left">
+            <h2 style="text-align: center; background-color: darkcyan;">Student Registration</h2>
+        <label style="font-size:larger; font-weight: bold;" id="F_Name">First Name :</label>
+        <input type="text" placeholder="First Name" id="Ft_Name"></input>
+        <label style="font-size:larger; font-weight: bold;" id="L_Name">Last Name :</label>
+        <input type="text" placeholder="Last Name" id="Lt_Name"></input>
+        <br><br>
+        <label style="font-size:larger; font-weight: bold;" id="S_Id">Student Id :</label>
+        <input type="number" placeholder="Student Id" id="St_Id">
+        <br>
+        <br>
+        <label style="font-size:larger; font-weight: bold;" id="Gender">Gender :</label>
+        <select name="Gender" id="Gen_der">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+            </select>
+            <br>
+            <br>
+            <label style="font-size:larger; font-weight: bold;" id="D_O_B">Date Of Birth :</label>
+            <input type="date" id="Da_te">
+            <br>
+            <br>
+            <label style="font-size:larger; font-weight: bold;" id="Email">Email Id :</label>
+            <input type="email" placeholder="Enter Email Id" id="Email_Id">
+            <br>
+            <br>
+            <label style="font-size:larger; font-weight: bold;" id="Course">Course :</label>
+            <select name="Course" id="Cou_rse">
+                <option value="">Select Course</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+                <option value="MECH">MECH</option>
+                <option value="CIVIL">CIVIL</option>
+            </select>
+            <br>
+            <br>
+            <label style="font-size:larger; font-weight: bold;" id="Clg_Name">College Name :</label>
+            <input type="text" placeholder="Enter College Name" id="Colg_Name">
+            <br>
+            <br>
+            <label style="font-size:larger; font-weight: bold;" id="My_File">Upload Id Card :</label>
+            <input type="file" id="Fi_le">
+            <br>
+            <br>
+            <button  style="font-size:larger; font-weight: bold; background-color: cornflowerblue" id="Button" onclick="Student_Details()">Submit</button>
+        </div>
+            <div id="right">
+                <h2 style="text-align: center; background-color: darkcyan;">Student Details</h2>
+            <p id="F1_name"></p>
+            <p id="L1_Name"></p>
+            <p id="S1_Name"></p>
+            <p id="G1_Name"></p>
+            <p id="D1_Name"></p>
+            <p id="E1_Name"></p>
+            <p id="C1_Name"></p>
+            <p id="Co1_Name"></p>
+            <p id="Fi1_Name"></p>
+            <button style="font-size:larger; font-weight: bold; background-color: cornflowerblue; text-align: center;">Edit</button>
+        </div>
+    </div>
+        <script>
+            function Student_Details(){
+                var FirstName=document.getElementById("Ft_Name").value
+              //  document.getElementById("F1_name").innerHTML="Full Name:"+FirstName;
+
+                var LastName=document.getElementById("Lt_Name").value
+               // document.getElementById("L1_Name").innerHTML=LastName;
+
+                var StudentId=document.getElementById("St_Id").value
+                document.getElementById("S1_Name").innerHTML="Student Id:  "+StudentId;
+
+                var Gender=document.getElementById("Gen_der").value
+                document.getElementById("G1_Name").innerHTML="Gender:  "+Gender;
+
+                var Dob=document.getElementById("Da_te").value
+                document.getElementById("D1_Name").innerHTML="Date of Birth:  "+Dob;
+
+                var Email=document.getElementById("Email_Id").value
+                document.getElementById("E1_Name").innerHTML="Email Id:  "+Email;
+
+                var Course=document.getElementById("Cou_rse").value
+                document.getElementById("C1_Name").innerHTML="Course:  "+Course;
+
+                var CollegeName=document.getElementById("Colg_Name").value
+                document.getElementById("Co1_Name").innerHTML="College Name:  "+CollegeName;
+
+                var UploadFile=document.getElementById("Fi_le").value
+                document.getElementById("Fi1_Name").innerHTML="Document:  "+UploadFile;
+
+                let A=FirstName.concat (LastName);
+                document.getElementById("F1_name").innerHTML="Full Name:  "+A;
+            }
+        </script>
+
+    </body>
+</html>

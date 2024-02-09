@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Encode</title>
+    <!-- String Decode after Time Delay in Alert -->
+</head>
+<body>
+    <label for="input_String">Enter a String :</label>&nbsp;
+    <input id="input_String" type="text"> <br><br>
+    <button id="button_Encode" onclick="encodeString()">Encode</button>
+    <script>
+        function encodeString(){
+            debugger;
+            var string = document.getElementById("input_String").value;
+            var encodedString = btoa(string);
+            alert(`The Encoded String is ${encodedString}`);
+        }
+        // setTimeout(()=>{
+        //         alert(`The Decoded String is ${string}`,5000);
+   
+        //     }
+    </script>  
+</body>
+</html>

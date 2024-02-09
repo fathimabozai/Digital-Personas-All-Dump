@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inputNumber">Enter a number</label>&nbsp;
+    <input id="inputNumber" type="text"><br><br>
+    <button id="button_submit" onclick="matchString()">Find Match</button>
+    <p id="para_Match_Text"></p>
+    <script>
+        function matchString(){
+            debugger;
+            var inputValue = document.getElementById("inputNumber").value;
+            var splitString = inputValue.split(" ");
+            var duplicates = splitString.filter((item, index) =>splitString.indexOf(item) !== index);
+            var duplicateArray = Array.from(new Set(duplicates));
+            // var match = inputValue.match(/[0-9]/g);
+            para = document.getElementById("para_Match_Text");
+            para.innerHTML = duplicateArray;
+        }
+    </script>
+</body>
+</html>

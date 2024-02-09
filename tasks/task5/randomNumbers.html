@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers</title>
+</head>
+<body>
+    <button type="submit" value="clickme" id ="button_Submit" onclick="randomNumber(1,30)">Click Me</button><br><br>
+    <script>
+        function randomNumber(min, max){  
+            debugger;          
+            var randomNumber = Math.round(Math.random()*(max - min)+min);
+            alert("The random number is : " + randomNumber);
+        }
+    </script>
+</body>
+</html>

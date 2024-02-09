@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime</title>
+</head>
+<body>
+    <h3>This finds whether the given number is Prime or not</h3>
+    <label>Enter a number :</label>&nbsp;
+    <input type="number" id="input_Number"><br><br>
+    <button id="button_Find" value = "find" onclick="isPrime()">Find</button>
+    <button id="button_FindAll" value ="findAll" onclick="findAllPrimes()">Find All</button>
+    <p id="ParaText"></p>
+    <script>
+        var para = document.getElementById("ParaText");
+        function isPrime(){
+            debugger;
+            var n = parseInt(document.getElementById("input_Number").value);
+            if(n < 2){
+                para.innerHTML = `The given number ${n} is not a Prime number !!`
+            }
+                for(i=2; i<=n; i++){
+                    if(n%i === 0){
+                        para.innerHTML = `The given number ${n} is not a Prime number !!`
+                        break;
+                    }
+                    para.innerHTML = `The given number ${n} is a Prime number !!`
+                }
+            }   
+       
+        function findAllPrimes(){
+            debugger;
+            var n = parseInt(document.getElementById("input_Number").value);
+
+            if(n<2){
+                para.innerHTML = `The given number ${n} is not a Prime number !!`; 
+            }
+            for(i=2;i<=n;i++){
+                for(j=2; j<i; j++){
+                    if(i%j == 0){
+                        break;
+                    }
+                }
+                if(i == j){
+                    para.innerHTML += `${i}<br>`    
+                }
+            }
+        }
+    </script>
+</body>
+</html>

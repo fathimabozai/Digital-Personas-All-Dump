@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array OBJ Push</title>
+</head>
+<body>
+    <script>
+        var Student={
+            name : "fathima",
+            age: 29,
+            city : "Kurnool",
+            qualification: "Graduate",
+            contact: 9955663322
+        }
+        var BankDetails={
+            name : "fathima",
+            age: 29,
+            city:"Kurnool",
+            branch : "SBI Colony",
+            aadhaarNO: 1234123412341234
+        }
+        debugger;
+        var employee= [];
+        employee.push(Student,BankDetails);
+        console.log(employee);
+        console.log(employee[0].qualification)
+        console.log(employee.length);
+        
+    </script>
+</body>
+</html>

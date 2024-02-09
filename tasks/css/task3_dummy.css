@@ -1,0 +1,86 @@
+header{
+    background-color: rgb(140, 120, 250);
+} 
+body{
+    background-color: rgb(240, 241, 243);
+}
+h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    /* text-decoration: solid; */
+}
+h3{
+    text-align: center;
+    color:rgb(28, 28, 27);
+    font-size: large;
+    font-weight: bolder;
+    background-color: rgb(246, 157, 102);
+}
+.div_my_Container{
+    display: flex;
+    /* overflow: auto; */
+}
+.left_Section_Emp_Info_Form{
+    width: 50%;
+    height: 500px;
+    border : 2px solid rgb(139, 137, 137);
+    /* padding: 5%; */
+    background-color: rgb(207, 207, 246);
+}
+.div_Emp_Info_Form{      
+    border:2px dotted brown;
+    
+}
+.div_Emp_Info_Form_labels_Input{   
+    border:2px solid blue;
+ }
+.right_Section_Emp_Details{
+    width: 50%;
+    height: 500px;
+    border : 2px solid rgb(139, 137, 137);
+    /* padding: 2.5%; */
+    background-color: rgb(213, 244, 185);
+}
+.div_Emp_Details_Text{
+    /* border : 2px solid black; */
+    height: 400px;
+    padding: 20px;
+    /* text-align: left; */
+    float: left;
+    
+}
+button{
+    width:80px;
+    height:30px;
+    border: 3px solid rgb(7, 7, 7);
+    border-radius: 5px;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+.div_Emp_Info_Form_Submit_Button{
+     margin-top: 40px;
+    margin-left: 25%;
+    text-align: center; 
+    width: 100px;
+    height:50px;
+    border: 3px dashed rgb(35, 39, 35);
+
+}
+ .button_Submit{
+    background-color: rgb(5, 144, 14);
+    margin-top: 10px;    float: center;
+}
+
+.div_Emp_Details_Text_Edit_Button{
+    text-align: center;
+}
+.button_Edit {
+    background-color: rgb(125, 125, 200);
+    margin-top: 120px;
+    margin-left: 90px;    
+    
+}
+
+

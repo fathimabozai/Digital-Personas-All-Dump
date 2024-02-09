@@ -1,0 +1,86 @@
+body{
+    background-image: url("https://img.freepik.com/free-vector/flat-abstract-background-holidays-pastel-colors-with-white-lines-flecks_1284-49802.jpg?w=740&t=st=1705595836~exp=1705596436~hmac=bd5c281c96dc20ab9817aa6ce807ed38e1c6a756851d925f0c6193d0fa60d7ed");
+    background-size: cover;
+}
+#div_allFormsContainer{
+    width:100%;
+    height:100%;
+}
+input{
+    float: right;
+}
+#div_Form1Table1Container{
+    /* background-color: beige; */
+    height:33%;
+    display: flex;
+}
+#div_Form2Table2Container{
+    /* background-color: rgb(231, 231, 184); */
+    height:33%;
+    display: flex;
+}
+#div_Form3Table3Container{
+    /* background-color: rgb(210, 210, 202); */
+    height:33%;
+    display: flex;
+}
+/* #div_Form1LableElementContainer, #div_Form2LableElementContainer{
+     background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-031.jpg");
+
+} */
+#div_Table1Container{
+    margin-top : 30px;
+    margin-left: 1%;
+    border: 1px;
+    position: relative;
+}
+#div_Table2Container{
+    margin-top : 30px;
+    margin-left: 1%;
+    border: 1px;
+    position: relative;
+}
+#div_Table3Container{
+    margin-top : 30px;
+    margin-left: 1%;
+    border: 1px;
+    position: relative;
+}
+/* #fieldset_form1{
+    background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700360787.jpg");
+    background-color: rgb(179, 220, 253);
+    width:345px;
+}
+#fieldset_form2{
+    background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700360787.jpg");
+
+    background-color: rgb(240, 171, 235);
+    width:345px;
+}
+#fieldset_form3{
+    background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700360787.jpg");
+
+    background-color: rgb(156, 248, 217);
+    width:345px;
+} */
+.class_SubmitButton{
+    background-color: rgb(200, 200, 250);
+    border-radius: 20px;
+    border-color: brown;
+    height: 30px;
+}
+#button_Edit_F1, #button_Edit_F2, #button_Edit_F3{
+    background-color: rgb(251, 164, 83);
+}
+#button_Delete_F1, #button_Delete_F2, #button_Delete_F3{
+    background-color: rgb(227, 50, 62);
+    color: white;
+}
+th{
+    color: rgb(71, 42, 1);
+    background-color: rgb(173, 150, 249);
+}
+td{
+    color: rgb(9, 9, 9);
+    background-color: rgb(227, 245, 215); 
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Positive or Negative</h2>
+    <label for="input_Number">Enter a Number : </label>
+    <input type ="number" id="input_Number" placeholder="Enter a number"><br><br>
+    <button type="submit" value="clickme" id ="button_Submit" onclick="positiveOrNegative()">Click Me</button><br><br>
+    <p id="signOfANumberText"></p>
+    <script>
+        var num = document.getElementById("input_Number");
+        var para = document.getElementById("signOfANumberText");
+        function positiveOrNegative(){         
+            if(num.value > 0){
+                para.innerHTML = `${num.value} is POSITIVE`;
+            }else if(num.value < 0){
+                para.innerHTML = `${num.value} is NEGATIVE`;
+            }else if(num.value == 0){
+                para.innerHTML = `${num.value} is Neither POSITIVE nor NEGATIVE`;
+            }
+        }
+    </script>
+</body>
+</html>  

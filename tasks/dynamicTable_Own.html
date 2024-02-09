@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Dynamic Table</title>
+    <link rel="stylesheet" href="css/dynamicTable_Own.css">
+</head>
+<body>
+    <header>
+        <h1>Dynamic Table Creation</h1>
+    </header>
+    <div id="table_Container">
+        <form method="POST" name="tableForm"> 
+            <input type="button" id="addRow" value="Add Row" onclick="add_Row()" style="float: right;"><br><br>
+
+            Name : <input type="text" name="input_Name" placeholder="Name">&nbsp;&nbsp;
+            D-O-B : <input type="date" name="input_Date">&nbsp;&nbsp;
+            City : <input type="text" name="input_City" placeholder="city">&nbsp;&nbsp;
+            E-Mail : <input type="email" name="input_EMail" placeholder="E-Mail"><br><br><br><br>
+            <table id="table_dynamic" border="1">
+                <thead>
+                    <th> Name</th>
+                    <th>D-O-B</th>
+                    <th>City</th>
+                    <th>Email</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>          
+        </form>
+    </div>
+    <script type="text/javascript">
+        function add_Row(){
+            debugger;
+            var name = document.tableForm.input_Name.value;
+            var dob = document.tableForm.input_Date.value;
+            var city = document.tableForm.input_City.value;
+            var eMail = document.tableForm.input_EMail.value;
+
+            var table = document.getElementById("table_dynamic");
+            var tableRow = document.createElement("tr");
+            var tableData1 = tableRow.appendChild(document.createElement('td'));
+            var tableData2 = tableRow.appendChild(document.createElement('td'));
+            var tableData3 = tableRow.appendChild(document.createElement('td'));
+            var tableData4 = tableRow.appendChild(document.createElement('td'));
+
+            tableData1.innerHTML = name;
+            tableData2.innerHTML = dob;
+            tableData3.innerHTML = city;
+            tableData4.innerHTML = eMail;
+
+            table.appendChild(tableRow);            
+        }
+    </script>
+</body>
+
+</html>

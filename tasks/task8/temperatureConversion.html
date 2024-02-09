@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Units Conversion</title>
+</head>
+<body>
+    <center>
+        <label>Enter value: </label>&nbsp;
+        <input id="input_Temperature" type="number"><br><br>
+        <button id="button_celcius_To_Farenheit" onclick="celciusToFarenheit()">Convert Celcius to Farenheit </button>
+        <button id="button_Farenheit_To_Celcius" onclick="farenheitToCelcius()">Convert Farenheit to Celcius</button>
+        <p id="para_TempText"></p>
+    </center>
+    <script>        
+        function celciusToFarenheit(){
+            var celcius = document.getElementById("input_Temperature").value;
+            var para = document.getElementById("para_TempText");
+            var farenheit = (celcius * 9/5)+32; 
+            para.innerHTML = `${celcius} Celcius is ${farenheit} Farenheit`;
+        }
+        function farenheitToCelcius(){
+            var farenheit = document.getElementById("input_Temperature").value;
+            var para = document.getElementById("para_TempText");
+            var celcius = (farenheit - 32) * 5/9;
+            para.innerHTML = `${farenheit} Farenheit is ${celcius} Celcius`;
+        }
+    </script>
+</body>
+</html>

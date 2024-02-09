@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of 'N' Natural Numbers</title>
+</head>
+<body>
+    <label>Enter a Natural Number: </label>&nbsp;
+    <input id="input_Natural_Number" type="number"><br><br>
+    <button id="button_Calculate_Sum" onclick="sumOfNaturalNumber()">Find</button>
+    <p id="para_SumOfNaturalNumber"></p>
+    <script>
+        function sumOfNaturalNumber(){                
+            var number = parseInt(document.getElementById("input_Natural_Number").value);
+            var para = document.getElementById("para_SumOfNaturalNumber");
+            var sum = 0;
+            for(i=1; i<=number; i++){
+                sum += i;
+            }
+            para.innerHTML = `The sum of ${number} Natural Numbers is ${sum}`;
+            }
+    </script>
+</body>
+</html>

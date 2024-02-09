@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays Practice</title>
+</head>
+<body>
+    <button id="evenButton" type="submit" onClick="evenArray()">Even Array</button>
+    <button id="oddButton" type="submit" onclick="oddArray()">Odd Array</button>
+    <p id="paraEvenOdd"></p>
+    <script>
+        var a1=[1,2,3,4,5,6,7,8,9,10];
+        var para = document.getElementById("paraEvenOdd");
+       
+        function evenArray(){
+            debugger;
+            for(i=1;i<a1.length;i=i+2){        
+                document.write(a1[i]+"<br>");
+            }            
+        }
+    
+        function oddArray(){
+            for(i=0;i<a1.length;i=i+2){        
+                document.write(a1[i]+"<br>");
+            }
+        }
+             
+    </script>
+</body>
+</html>

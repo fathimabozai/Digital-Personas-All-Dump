@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <center>
+        <label>Enter Table: </label>&nbsp;
+        <input id="input_Number1" type="number" placeholder="Enter table number"><br><br>
+        <label>Enter Value to Repeat: </label>&nbsp;
+        <input id="input_Number2" type="number" placeholder="Enter the number till multiplication should happen"><br><br>
+        <button id="button_Generate" type="submit" onclick="generateMultiplcationTable()">Generate</button>
+        <p id="para_Table"></p>
+    </center>
+    <script>
+        function generateMultiplcationTable(){
+            debugger;
+            var table = document.getElementById("input_Number1").value;
+            var repeat = document.getElementById("input_Number2").value;
+            var para = document.getElementById("para_Table");
+            var result = "";
+            for(i=1; i<=repeat;i++){ 
+                result += `${table} * ${i} = ${table*i}<br>`             
+                para.innerHTML = `The multiplication table of ${table} upto ${repeat} is displayed below: <br> ${result}`;
+            }
+        }
+    </script>
+</body>
+</html>

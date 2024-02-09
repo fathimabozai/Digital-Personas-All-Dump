@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables Practice</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            border-style: dotted;
+            border-color:rgb(197, 16, 142);
+            padding: 10px;
+        }
+        /* th,td{
+            background-color: blue;
+        } */
+        th{
+            width: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Details</caption>
+        
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <colgroup>
+            <col style="background-color: red;" />
+            <col span="2"  style="background-color: yellow;" />
+        </colgroup>
+        <tr>
+            <td>Fathima</td>
+            <td>10</td>
+            <td>HYDERABAD</td>
+        </tr>
+        <tr>
+            <td>Khatoon</td>
+            <td>15</td>
+            <td>KURNOOL</td>
+        </tr>
+        <tr>
+            <td>Feeha</td>
+            <td>20</td>
+            <td>DELHI</td>
+        </tr>
+        <tr>
+            <td>Rahath</td>
+            <td>25</td>
+            <td>MUMBAI</td>
+        </tr>        
+    </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting</title>
+</head>
+<body>
+    <label>Enter value: </label>&nbsp;
+    <input id="input_Number" type="text"><br><br>
+    <button id="button_Sort" onclick="sortArray()">Sort</button>
+    <p id="para_Text"></p>
+    <script>
+         function sortArray(){
+            debugger;
+            var num = document.getElementById("input_Number").value;
+            var para = document.getElementById("para_Text");
+            
+            //with commas
+            var array =num.split(",");
+            var sortedArray = array.sort((a,b)=>a-b);
+            alert(`Sorted Array is : ${sortedArray}`);
+
+            //Without commas
+            // var array = Array.from(num.toString(), Number).map(Number);
+            // alert(`Array after sorting is:\n ${array.sort()}`);
+        }
+    </script>
+</body>
+</html>

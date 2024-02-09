@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/calculator.css" />
+    <title>Calculator</title>
+</head>
+<body>
+    <center>
+        <h1>Calculator using JAVASCRIPT</h1>
+        <div class = "class_formDesign">
+            <form name ="form_Claculator">
+                <input type="text" id="calculation"><br><br>
+                <input type="button" id="button_EqualTo" value="=" onclick="form_Claculator.calculation.value = eval(form_Claculator.calculation.value) ">
+                <input type="button" id="button_DecimalPoint" value="." onclick="form_Claculator.calculation.value += '.'">
+                <input type="button" id="button_Divide" value="/" onclick="form_Claculator.calculation.value += '/' ">
+                <input type="button" id="button_Multiply" value="*" onclick="form_Claculator.calculation.value += '*' "><br><br>
+
+                <input type="button" id="button_Eight" value="8" onclick="form_Claculator.calculation.value += '8' ">
+                <input type="button" id="button_Nine" value="9" onclick="form_Claculator.calculation.value += '9' ">
+                <input type="button" id="button_Add" value="+" onclick="form_Claculator.calculation.value += '+' ">
+                <input type="button" id="button_Subtract" value="-" onclick="form_Claculator.calculation.value += '-' "><br><br>
+                
+                <input type="button" id="button_Four" value="4" onclick="form_Claculator.calculation.value += '4' ">
+                <input type="button" id="button_Five" value="5" onclick="form_Claculator.calculation.value += '5' ">
+                <input type="button" id="button_Six" value="6" onclick="form_Claculator.calculation.value += '6' ">
+                <input type="button" id="button_Seven" value="7" onclick="form_Claculator.calculation.value +='7' "><br><br>
+
+                <input type="button" id="button_Zero" value="0" onclick="form_Claculator.calculation.value += '0' ">
+                <input type="button" id="button_One" value="1" onclick="form_Claculator.calculation.value += '1' ">
+                <input type="button" id="button_Two" value="2" onclick="form_Claculator.calculation.value += '2' ">
+                <input type="button" id="button_Three" value="3" onclick="form_Claculator.calculation.value += '3' "><br><br>
+
+                <input type="button" id="clearScreen" value="Clear Screen" onclick="form_Claculator.calculation.value=''">
+            </form>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(181, 210, 249);
+    text-align:center;
+}
+
+a :visited {
+    color: rgb(238, 99, 122);
+    text-decoration: none;    
+}
+a :link {
+    color : yellow;
+    background-color: black;
+}
+a :active{
+    color :aqua;
+    background-color: brown;
+}

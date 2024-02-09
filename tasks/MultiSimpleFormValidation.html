@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/MultiSimpleFormValidation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Multiple Simple Form</title>
+
+</head>
+<body>
+    <div id="div_allFormsContainer">
+        <div id="div_Form1Table1Container">           
+            <div id="div_Form1Container">
+                <form id="form1_CustomerRegistration" name="form1_CustomerRegistration">
+                    <div id="div_Form1DataContainer">
+                        <div id="div_Form1LableElementContainer">
+                           
+                            <legend style="font-weight: bold;">Customer Registration Form</legend>
+                            <label for="input_F1_CustomerName">Name</label>
+                            <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>&nbsp;
+                            <input type="text" id="input_F1_CustomerName" placeholder="Customer Name" required oninput="validateCustomerName()"><br><br>
+    
+                            <label for="input_F1_CustomerMobile">Mobile</label>
+                            <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>&nbsp;
+                            <input type="text" id="input_F1_CustomerMobile" placeholder="Customer Mobile" required oninput="validateCustomerMobile()"><br><br>
+    
+                            <label for="input_F1_CustomerPanNo">PAN Number</label>
+                            <sup><i class="fa fa-asterisk" style="font-size:10px;color:red" ></i></sup>&nbsp;
+                            <input type="text" id="input_F1_CustomerPanNo" placeholder="PAN No. ex: ABCDE1234F" required oninput="validateCustomerPan()"><br><br>
+    
+                            <label for="radio_F1_CustomerGender">Gender</label>&nbsp;
+                            <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                            <input type="radio" id="radio_F1_CustomerGender_Male" name="radio_Gender" required oninput="validateCustomerGender()" value="Male" style="float: none;">&nbsp;
+                            <label for="radio_F1_CustomerGender_Male">Male</label>
+                            <input type="radio" id="radio_F1_CustomerGender_Female" name="radio_Gender" value="Female" oninput="validateCustomerGender()" style="float: none;">&nbsp;
+                            <label for="radio_F1_CustomerGender_Female">Female</label>
+                            <input type="radio" id="radio_F1_CustomerGender_Others" name="radio_Gender" value="Others"oninput="validateCustomerGender()"  style="float: none;">&nbsp;
+                            <label for="radio_F1_CustomerGender_Others">Others</label><br><br>
+    
+                            <label for="input_F1_CustomerCity">City</label>
+                            <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                            <input type="text" id="input_F1_CustomerCity" placeholder="City" required oninput="validateCustomerCity()"><br><br>
+    
+                            <label for="select_State">State</label>
+                            <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                            <select id= "select_F1_State" name="select_State" style="float: right;" required oninput="validateCustomerState()">
+                                <option value="" selected>No Selection</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select><br><br>
+    
+                            <label for="checkbox_F1_CustomerPaymentMode">Prefered Payment Mode</label>
+                            <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup><br>                   
+                            <input type="checkbox" id="checkbox_F1_PaymentMode_Card" name="checkbox_F1" required oninput="validateCustomerPaymentMode()" value="Credit/Debit Card" style="float: none;">
+                            <label for="checkbox_F1_PaymentMode_Card">Credit/Debit Card</label><br>
+                            <input type="checkbox" id="checkbox_F1_PaymentMode_COD" name="checkbox_F1" required oninput="validateCustomerPaymentMode()" value="Cash On Delivery" style="float: none;">
+                            <label for="checkbox_F1_PaymentMode_COD">Cash On Delivery</label><br>
+                            <input type="checkbox" id="checkbox_F1_PaymentMode_UPI" name="checkbox_F1" required oninput="validateCustomerPaymentMode()" value="UPI Payment" style="float: none;">
+                            <label for="checkbox_F1_PaymentMode_UPI">UPI Payment</label><br><br>
+                            <div id="div_Form1SubmitContainer">
+                                <center><button type="button" id="button_Form1Submit" value="submit" onclick="addRowForm1()" class="class_SubmitButton"><i class='fa fa-paper-plane'></i> Submit</button></center><br>
+                            </div>
+                          
+                        </div> 
+                    </div>                         
+                </form>
+            </div>
+            <div id="div_Table1Container">
+                <center>
+                    <table id="table1" border="1px">
+                        <thead>
+                            <th style="width: 10px;">S.No</th>
+                            <th style="width: 70px;">Name</th>
+                            <th style="width: 100px;">Mobile</th>
+                            <th style="width: 100px;">PAN Number</th>
+                            <th style="width: 70px;">Gender</th>
+                            <th style="width: 100px;">City</th>
+                            <th style="width: 200px;">State</th>
+                            <th style="width: 150px;">Payment Mode</th>
+                            <th style="width: 250px;">Actions</th>
+                        </thead>
+                        <tbody>                            
+                        </tbody>
+                    </table><br>
+                </center>
+            </div>
+        </div>
+        <div id="div_Form2Table2Container">
+            <div id="div_Form2Container">
+                <form id="form2_PurchaseDetails" name="form2_PurchaseDetails">
+                    <div id="div_Form2DataContainer">
+                        <div id="div_Form2LableElementContainer">
+                            <fieldset id="fieldset_form2">
+                                <legend style="font-weight: bold;">Purchase Details</legend>
+                                <label for="input_F2_ProductId">Product Id</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <input type="text" id="input_F2_ProductId" placeholder="Product Id.  ex: P-1234" required oninput="validateProductId()"><br><br>
+    
+                                <label for="input_F2_ProductName">Product Name</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <input type="text" id="input_F2_ProductName" placeholder="Enter Product Name" required oninput="validateProductName()"><br><br>
+    
+                                <label for="checkbox_F2_PurchaseProductType">Product Type</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup><br>
+                                <input type="checkbox" id="checkbox_F2_ProductType_Goods" name="checkbox_F2" value="Goods" required oninput="validateProductType()" style="float: none;">
+                                <label for="checkbox_F2_ProductType_Goods">Goods</label><br>
+                                <input type="checkbox" id="checkbox_F2_ProductType_Merchandise" name="checkbox_F2" value="Merchandise" oninput="validateProductType()" style="float: none;">
+                                <label for="checkbox_F2_ProductType_Merchandise">Merchandise</label><br>
+                                <input type="checkbox" id="checkbox_F2_ProductType_Groceries" name="checkbox_F2" value="Groceries" oninput="validateProductType()" style="float: none;">
+                                <label for="checkbox_F2_ProductType_Groceries">Groceries</label><br><br>
+                                    
+                                
+                                <label for="input_F2_ProductPrice">Product Price</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <input type="text" id="input_F2_ProductPrice" placeholder="Enter Product Price" required oninput="validateProductPrice()"><br><br>
+    
+                                <label for="select_ProductQuantity">Product Quantity</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <select id="select_F2_ProductQuantity" name="select_ProductQuantity" style="float: right;" required oninput="validateProductQuantity()">
+                                    <option value="">No Selection</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select><br><br><br>
+                                
+                                <label for="input_F2_ProductAmount">Product Total Amount</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <input type="text" id="input_F2_ProductAmount" placeholder="Enter Product Amount" required onclick="validateProductTotalAmount()" ><br><br>
+    
+                                <label for="radio_F2_PurchaseDeliveryStatus">Delivery Status</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup><br>
+                                <input type="radio" id="radio_F2_PurchaseDeliveryStatus_PD"  name="radio_DeliveryStatus" value="Partially Delivered" required oninput="validateProductDeliveryStatus()" style="float: none;">
+                                <label for="radio_F2_PurchaseDeliveryStatus_PD">Partially Delivered</label>
+                                <input type="radio" id="radio_F2_PurchaseDeliveryStatus_D" name="radio_DeliveryStatus"  value="Delivered" oninput="validateProductDeliveryStatus()" style="float: none;">
+                                <label for="radio_F2_PurchaseDeliveryStatus_D">Delivered</label><br><br>
+                                <div id="div_Form2SubmitContainer">
+                                    <center><button type="button" id="button_Form2Submit" value="submit" onclick="addRowForm2()" class="class_SubmitButton"><i class='fa fa-paper-plane'></i> Submit</button></center><br>
+                                </div>
+                            </fieldset>
+                        </div>                                                  
+                    </div>                   
+                </form>   
+            </div>
+            <div id="div_Table2Container">
+                <center>
+                    <table id="table2" border="1px">
+                        <thead>
+                            <th style="width: 10px;">S.No</th>
+                            <th style="width: 100px;">Product ID</th>
+                            <th style="width: 150px;">Name</th>
+                            <th style="width: 150px;">Type</th>
+                            <th style="width: 70px;">Price</th>
+                            <th style="width: 50px;">Quantity</th>
+                            <th style="width: 100px;">Amount</th>
+                            <th style="width: 150px;">Delivery Status</th>
+                            <th style="width: 200px;">Actions</th>
+                        </thead>
+                        <tbody>                            
+                        </tbody>
+                    </table><br>
+                </center>                
+            </div>
+        </div>
+        <div id="div_Form3Table3Container">
+            <div id="div_Form3Container">
+                <form id="form3_BillingDetails" name="form3_BillingDetails">
+                    <div id="div_Form3DataContainer">
+                        <div id="div_Form3LableElementContainer">
+                            <fieldset id="fieldset_form3">
+                                <legend style="font-weight: bold;">Billing Details</legend>                       
+                                <label for="input_F3_BillingId">Billing Id</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <input type="text" id="input_F3_BillingId" placeholder="Billing Id ex: INV-12345" required oninput="validateBillingId()"><br><br>
+    
+                                <label for="input_F3_BillingDate">Billing Date</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <input type="date" id="input_F3_BillingDate" placeholder="Enter Billing Date" required oninput="validateBillingDate()"><br><br>
+    
+                                <label for="input_F3_BillingAmount">Billing Amount</label>
+                                <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>
+                                <input type="text" id="input_F3_BillingAmount" placeholder="Enter Billing Amount" required oninput="validateBillingAmount()"><br><br>
+    
+                                <label for="select_F3_DeliveryType">Delivery Type</label>
+                                <select id="select_F3_DeliveryType" name="select_F3_DeliveryType" required oninput="validateDeliveryType()" style="float: right;">
+                                    <option value="">No Selection</option>
+                                    <option value="Pick Up">Pick Up</option>
+                                    <option value="Home Delivery">Home Delivery</option>
+                                </select><br><br>                                
+    
+                                <label for="radio_F3_BillingStatus">Billing Status</label>
+                                <input type="radio" id="radio_BillingStatus_Outstanding" name="radio_BillingStatus" value="Outstanding" required oninput="validateBillingStatus()" style="float: none;">
+                                <label id="radio_BillingStatus_Outstanding">Outstanding</label>
+                                <input type="radio" id="radio_BillingStatus_Paid" name="radio_BillingStatus" value="Paid" oninput="validateBillingStatus()" style="float: none;">
+                                <label for="radio_BillingStatus_Paid">Paid</label><br><br>
+    
+                                <label for="input_F3_BillingToName">Billing To</label>
+                                <input type="text" id="input_F3_BillingToName" placeholder="Address. Ex: Area, City, PinCode" required oninput="validateBillingTo()"><br><br>                     
+    
+                                <label for="checkbox_F3_BillingPaymentType">Billing Payment Type</label><br><br>
+                                <input type="checkbox" id="checkbox_F3_PaymentType_Cash" name="checkbox_F3_PaymentType" value="Cash Payment" required onclick="validateBillingPaymentType()" style="float: left;">
+                                <label for="checkbox_F3_PaymentType_Cash">Cash Payment</label><br><br>
+                                <input type="checkbox" id="checkbox_F3_PaymentType_Card" name="checkbox_F3_PaymentType" value="Card Payment" onclick="validateBillingPaymentType()" style="float: left;">
+                                <label for="checkbox_F3_PaymentType_Card">Card Payment</label><br><br>
+                                <div id="div_Form3SubmitContainer">
+                                    <center><button type="button" id="button_Form3Submit" value="submit" onclick="addRowForm3()" class="class_SubmitButton"><i class='fa fa-paper-plane'></i> Submit</button></center><br>
+                                </div>
+                            </fieldset>                           
+                        </div>
+                    </div>
+                </form>               
+            </div>
+            <div id="div_Table3Container">
+                <center>
+                    <table id="table3" border="1px">
+                        <thead>
+                            <th style="width: 10px;">S.No</th>
+                            <th style="width: 100px;">Order ID</th>
+                            <th style="width: 100px;">Billing Date</th>
+                            <th style="width: 100px;">Billing Amount</th>
+                            <th style="width: 110px;">Delivery Type</th>
+                            <th style="width: 100px;">Delivery Status</th>
+                            <th style="width: 200px;">Billing To</th>
+                            <th style="width: 130px;">Billing Payment Type</th>
+                            <th style="width: 250px;">Actions</th>
+                        </thead>
+                        <tbody id="table3Body">                            
+                        </tbody>
+                    </table><br>
+                </center>               
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/customerRegistration_MSFV.js"></script>
+    <script type="text/javascript" src="js/purchaseDetails_MSFV.js"></script>
+    <script type="text/javascript" src="js/billingDetails_MSFV.js"></script>
+    <script>
+        function reverseTableRows(tableId){
+            debugger;
+            var table = document.getElementById(tableId);
+            var newTable = document.createElement('table');
+            var oldTable = table;
+
+            var rows = oldTable.rows;
+            var i = rows.length - 1;
+
+            if(i>=0){
+                newTable.appendChild(rows[i]);
+                i = i-1;
+            }
+            oldTable.parentNode.replaceChild(newTable, oldTable);
+        }
+    </script>
+</body>
+</html>

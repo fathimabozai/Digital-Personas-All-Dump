@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance Units Conversion</title>
+</head>
+<body>
+    <center>
+        <label>Enter value: </label>&nbsp;
+        <input id="input_Distance" type="number"><br><br>
+        <button id="button_Kms_To_Miles" onclick="kmsToMiles()">Convert KMS to MILES</button>
+        <button id="button_Miles_To_Kms" onclick="milesToKms()">Convert MILES to KMS</button>
+        <p id="para_DistanceText"></p>
+    </center>
+    <script>
+        
+        function kmsToMiles(){
+            var number = document.getElementById("input_Distance").value;
+            var para = document.getElementById("para_DistanceText");
+            debugger;
+            var miles = number * 0.6214;
+            para.innerHTML = `${number} Kms is ${miles} miles`
+        }
+        function milesToKms(){
+            debugger;
+            var number = document.getElementById("input_Distance").value;
+            var para = document.getElementById("para_DistanceText");
+            var  kms = number / 0.6214;
+            para.innerHTML = `${number} miles is ${kms} kms`
+
+        }
+    </script>
+</body>
+</html>

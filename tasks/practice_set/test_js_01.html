@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+</head>
+<body>
+    <p id="text_Date_Time"></p>
+   <button id="date_Time" value="Click Me" onclick="document.getElementById('text_Date_Time').innerHTML=Date()">Click Me, I'll display Date&Time !</button><br><hr>
+    <label>Enter First Value</label>
+    <input id="first_Value" type="number" placeholder="First Value"><br><br>
+    <label>Enter Second Value</label>
+    <input id="second_Value" type="number" placeholder="Second Value"><br><br>
+    <button type="submit" onclick="add()">Add</button>&nbsp;
+    <button type="submit" onclick="subtract()">Subtract</button>&nbsp;
+    <button type="submit" onclick="multiply()">Multiply</button>&nbsp;
+    <button type="submit" onclick="divide()">Divide</button>
+    <p id="claculation_result"></p>
+    <script>
+        function add(){
+            var num1 = document.getElementById("first_Value").value;
+            console.log(num1)
+            var num2 = document.getElementById("second_Value").value;
+            console.log(num2)
+            var result = Math.subtract(num1, num2);
+            console.log(result)
+            document.getElementById("claculation_result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

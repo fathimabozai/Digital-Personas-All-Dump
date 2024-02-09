@@ -1,0 +1,26 @@
+body{
+        background-color: rgb(123, 237, 237); 
+}
+header{
+    background-color:rgb(245, 196, 146);
+}
+#table_Container{
+    background-color: rgb(213, 191, 235);
+    padding: 30px;
+  
+}
+#addRow{
+    margin-top:15px;
+    margin-left:15px;
+    padding:auto; 
+    background-color: rgb(202, 149, 201);
+    /* height:50px;
+    width:100%;
+    margin-top: 30%;
+    position: fixed;    */
+ }
+ th,td{
+    width: 150px;
+ }
+
+ 

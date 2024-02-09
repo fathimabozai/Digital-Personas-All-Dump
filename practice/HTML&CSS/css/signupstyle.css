@@ -1,0 +1,16 @@
+.myContainer{
+    display: flex;
+    overflow:hidden;
+}
+.left{
+    background-color: antiquewhite;
+    width:50%;
+    height:100%;
+    padding: 50px;
+}
+.right{
+    background-color: bisque;
+    width:50%;
+    height:100%;
+    padding:50px;
+}

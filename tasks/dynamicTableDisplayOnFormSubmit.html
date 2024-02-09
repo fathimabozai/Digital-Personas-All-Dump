@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table on Form Submit</title>
+    <link rel="stylesheet" href="css/dynamicTableDisplayOnFormSubmit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="divFormContainer">
+            
+                      
+       
+    </div>
+    <div id="div_Search_Table_Container">
+        <div id="searchContainer">
+            
+        </div>
+    </div> 
+            
+     
+        <div id="dynamicTableContainer">
+            
+        </div>     
+    
+
+    <script>
+        var arrayOfObjects=[];
+        var table,tableRow, tableData1, tableData2, tableData3, tableData4, tableData5;
+        var name, age, mobile, email,regExpName, regExpAge, regExpMobile, regExpEMail
+        var searchName;
+        function validate()
+        {
+            debugger;
+            name = document.getElementById("input_Name").value;
+            age = document.getElementById("input_Age").value;
+            mobile = document.getElementById("input_Mobile").value;
+            email = document.getElementById("input_EMail").value;
+            regExpName = /^[A-za-z]+$/;
+            regExpAge= /^[0-9]+$/;
+            regExpMobile = /^[0-9+]+$/;
+            regExpEMail =/^[A-za-z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            //all data 
+            if(!name == "" && !age == "" && !mobile == "" && !email == ""){
+                //match all data
+                if(name.match(regExpName) && age.match(regExpAge) && mobile.match(regExpMobile) && email.match(regExpEMail)){
+                    alert("Validation successfull");                                       
+                    //append row to table
+                    addRow();
+                }else{
+                    alert("Validation not successfull");
+                }
+            }
+            //empty email with required data
+            else if((!name == "" && !age == "" && !mobile == "" && email == "")){
+                //match all data except emailid as it is empty
+                if(name.match(regExpName) && age.match(regExpAge) && mobile.match(regExpMobile)){
+                    alert("Validation successfull");
+                    //append row to table with empty email data
+                    addRow();
+                }else{                    
+                    alert("Validation not successfull");
+                }
+            }else{
+                alert("Fill mandatory fields");
+            }             
+        }
+        function addRow(){                       
+            //alert("row added");
+            const form = document.getElementById("formSimple");
+            form.addEventListener('submit', (e)=>{            
+            //prevents Refreshing HTML
+             e.preventDefault();
+            //converts formData into Array of Arrays
+            const formData = new FormData(form);
+            //converting array of arrays to object
+            const obj = Object.fromEntries(formData);
+            //console.log(obj);
+            arrayOfObjects.push(obj);
+            //console.log(arrayOfObjects);            
+       
+            debugger;
+            // table = document.getElementById("table1");
+            // tableRow = document.createElement("tr");
+            // tableData1 = tableRow.appendChild(document.createElement('td'));
+            // tableData2 = tableRow.appendChild(document.createElement('td'));
+            // tableData3 = tableRow.appendChild(document.createElement('td'));
+            // tableData4 = tableRow.appendChild(document.createElement('td'));
+            // tableData5 = tableRow.appendChild(document.createElement('td'));
+            for(i=0;i<arrayOfObjects.length;i++){    
+                tableData1.innerHTML = i+1;
+                tableData2.innerHTML = arrayOfObjects[i].input_Name;
+                tableData3.innerHTML = arrayOfObjects[i].input_Age;
+                tableData4.innerHTML = arrayOfObjects[i].input_Mobile;
+                tableData5.innerHTML = arrayOfObjects[i].input_EMail;  
+            }        
+            table.appendChild(tableRow);            
+            document.getElementById("formSimple").reset();
+        }, {once:true});  
+        return arrayOfObjects;             
+        }
+       function findName(){
+            debugger;
+            searchName = document.getElementById("input_SearchName").value;
+            for(i=0;i<arrayOfObjects.length;i++){
+                if(searchName === arrayOfObjects[i].input_Name){
+                console.log(arrayOfObjects[i]);
+                }
+            }       
+       }
+    </script>
+</body>
+</html>

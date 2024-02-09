@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Count</title>
+</head>
+<body>
+    <label>Enter a String :</label>&nbsp;
+    <input id="input_String" placeholder="Enter String"><br><br>
+    <label>Enter a letter :</label>&nbsp;
+    <input id="input_Letter" placeholder="Enter Letter"><br><br>
+    <button id="button_Count" type="submit" onclick="countLetter()">Count</button>
+    <p id="para_Text"></p>
+    <script>
+        function countLetter(){
+            debugger;
+            var word = document.getElementById("input_String").value;
+            var letter = document.getElementById("input_Letter").value;
+            var para = document.getElementById("para_Text");
+            var count = 0;
+            for(i=0; i < word.length; i++){                
+                if(letter == word.charAt(i)){
+                    count = count +1;
+                }              
+            }
+            para.innerHTML = `The word ${word} contains ${letter.toUpperCase()} letter ${count} times !`;         
+        }
+    </script>
+</body>
+</html>

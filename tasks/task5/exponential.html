@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponential</title>
+</head>
+<body>
+    <label>Enter X value : </label>&nbsp;
+    <input type="number" id="input_X"><br><br><br>
+    <label>Enter Y value : </label>&nbsp;
+    <input type="number" id="input_Y"><br><br><br>
+    <button id="submit" onclick="xPowerY()">Submit</button>
+    <p id="para_result"></p>
+    <script>
+        function xPowerY(){
+            debugger;
+            var x = parseInt(document.getElementById("input_X").value);
+            var y = parseInt(document.getElementById("input_Y").value);
+            var xPowY = x ** y;
+            document.getElementById("para_result").innerHTML = `The value of ${x} power ${y} is : ${xPowY}`;
+        }
+    </script>
+</body>
+</html>

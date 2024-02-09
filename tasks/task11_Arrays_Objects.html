@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Objects</title>
+    
+</head>
+<body>
+    <script>
+    var CustomerDetails={
+        cust_Name : "fathima",
+        cust_Phone: 1234567789,
+        cust_Email: "mubashkhan505@gmail.com",
+        cust_DOB:"10-02-1994",
+        cust_Gender:"Female",
+    };
+    
+    var OrderDetails = {
+        order_Id:"#103499",
+        order_Payment:"PayTM",
+        order_DateTime:"10-12-2021 10:02 P.M",        
+        order_Stauts:"Delivered",
+        order_Coupon: "TRYNEW100",
+        order_Tax:"29.05",
+        order_DeliveryCharge:"20",
+        order_Amount:"578",
+    };   
+
+    var accountDetails =[];
+    //Adding Object-CustomerDetails into Array-accountDetails
+    accountDetails.push(CustomerDetails);
+    console.log(accountDetails);
+
+    //Adding Object-OrderDetails into Array-accountDetails
+    accountDetails.push(OrderDetails);
+    console.log(accountDetails);
+
+    //poping last element from Array(orderDetails)
+    console.log("Length after pushing 2 objects is: "+accountDetails.length)
+    console.log(accountDetails.pop());
+    console.log("Length after poping 1st element is: "+accountDetails.length);
+    console.log(accountDetails.pop());
+    console.log("Length after poping 2nd element is: "+accountDetails.length);
+
+    debugger;
+    accountDetails.push(CustomerDetails);
+    accountDetails.push(OrderDetails);
+    console.log(accountDetails);
+
+    var object3 = {
+        name : "XYZ",
+        age: 20,
+        address: "Mumbai, 500245"
+    }
+    accountDetails.splice(0,0, object3);
+    console.log(accountDetails);
+
+    console.log(accountDetails.slice(1,2));
+
+    //calculating array index using for loop
+    for(i=0;i<accountDetails.length;i++){
+        console.log("Printing using For Loop on Arrays");       
+    } 
+    console.log("Array Length is "+ i);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Formats</title>
+</head>
+<body>
+    <button id="us_button" value="UsDate" onclick="usDate()">US Date</button><br>
+    <p id="para_UsDate"></p><br><br><br>
+    <button id="international_button" value="InternationalDate" onclick="internationalDate()">Internation Date</button><br>
+    <p id="para_InternationaDate"></p><br><br><br>
+    <script>
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var date = date.getDate();
+        function usDate(){
+            debugger;   
+            var usDate = `${month+1}-${date}-${year}`;       
+            document.getElementById("para_UsDate").innerHTML = `The Date today in  US-Format(mm-dd-yyyy) is ${usDate}` ;
+        }
+        function internationalDate(){
+            debugger;
+            var yearString= year.toString();
+            var intDate = `${year}-${month+1}-${date}`;
+            document.getElementById("para_InternationaDate").innerHTML = `The Date today in  International-Format(yyyy-mm-dd) is ${intDate}` ;
+
+        }
+    </script>
+</body>
+</html>

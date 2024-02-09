@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Properties Merge</title>
+</head>
+<body>
+    <script>
+        var Student = {
+            name : "Rahath",
+            age : 29
+        }
+        console.log(Student);
+        var Employee = {
+            name : "Rahath Ali Khan",
+            designation : "Auditor"
+        }
+        console.log(Employee);
+        var details = {
+            ...Student,
+            ...Employee
+        }
+        console.log(details);
+    </script>
+</body>
+</html>

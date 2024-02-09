@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <h1>Array Methods</h1>
+    <button id="button_Empty_Array" onclick="emptyArray()">Empty Array</button><br><br>
+    <button id="button_Array_Elements" onclick="arrayWithElements()">Array with Elements</button><br><br>  
+    <h1><p id="para_Text"></p> </h1>
+
+    <h3>Adding Elements 7,8 into Array - Push and Unshift</h3>
+    <button id="button_Push" onclick="arrayPushMethod()">Push Into Array</button>
+    <button id="button_Unshift" onclick="arrayUnshiftMethod()">Unshift (Add at First Index into Array)</button>
+
+    <h3>Deleting Elements 6,1 from an Array - Pop and Shift</h3>    
+    <button id="button_Pop" onclick="arrayPopMethod()">Pop From Array</button>    
+    <button id="button_Shift" onclick="arrayShiftMethod()">Shift (Delete at First Index from Array)</button>
+
+    <h3>Determining Array length </h3>    
+    <button id="button_Length" onclick="findLength()">Length</button> 
+
+    <h3>Converting Array To String Using toString() and join()</h3>    
+    <button id="button_String" onclick="arrayToString()">Array as String</button> 
+    <button id="button_String_Join" onclick="arrayToStringWithJoin()">Array as String(JOIN)</button> 
+
+    <h3>Concating 2 arrays</h3>    
+    <button id="button_Concat" onclick="concatArrays()">Concat Array</button>
+
+    <h3>Deleting index 1 and complete array an array</h3>    
+    <button id="button_delete_Index" onclick="deleteArrayIndex()">Delete Index</button>
+    <button id="button_delete_Array" onclick="deleteArray()">Delete Array</button>
+
+    <h3>Sorting Arrays - ASCENDING & DESCENDING</h3>    
+    <button id="button_Sort_Ascending" onclick="sortArrayAscending()">Sort Array Ascending</button>
+    <button id="button_Sort_Descending" onclick="sortArrayDescending()">Sort Array Descending</button> 
+
+    <h3>SLICE(REMOVE 2,3,4) and SPLICE(ADD WITH MAY/MAYNOT REMOVE)</h3>    
+    <button id="button_Slice" onclick="sliceArray()">SLICE</button>
+    <button id="button_Splice" onclick="spliceArray()">SPLICE</button> 
+
+    <script>
+        
+        var para= document.getElementById("para_Text").innerHTML= `My initial array is [${arr}]`;
+        var arr=[1,2,3,4,5,6];
+
+        letters = ['a','b','c','d'];
+        function emptyArray(){
+            var employeeDetails = [];  
+            alert(`Empty Array: ${employeeDetails}`)
+        }
+        function arrayWithElements(){
+            employeeDetails = ["fathima", 29, "Kurnool", 9876543210, "ADH123456789"]
+            alert(`Array with Elements: ${employeeDetails}`)
+        }
+        function arrayPushMethod(){
+            arr.push("7");
+            alert(`Array after PUSH(7) is: [${arr}]`);
+        }
+        function arrayUnshiftMethod(){
+            arr.unshift("8");
+            alert(`Array after UNSHIFT(8) is: [${arr}]`);
+        }
+        function arrayPopMethod(){
+            arr.pop();
+            alert(`Array after POP() is: [${arr}]`);
+        }
+        function arrayShiftMethod(){
+            arr.shift();
+            alert(`Array after SHIFT() is: [${arr}]`);
+        }
+        function findLength(){          
+            alert(`Array length is:\n ${arr.length}`);
+        }
+        
+        function arrayToString(){
+            debugger;
+            var str = arr.toString();
+            alert(`Converting Array to String is ${str}`)
+        }
+        function arrayToStringWithJoin(){
+            str = arr.join(" & ");
+            alert(`Converting Array to String with JOIN  is ${str}`)
+        }
+        function concatArrays(){
+            var arrConcat = letters.concat(arr);
+            alert(`Concatenated Array is ${arrConcat}`);
+        }
+        function deleteArrayIndex(){
+            debugger;
+            alert(`Array:\n ${delete arr[1]}\n ${arr}`);
+        }
+        function deleteArray(){
+            debugger;
+            alert(`Array Deleted : ${delete[arr]}`);
+            // console.log(arr);
+        }
+        function sortArrayAscending(){
+           arr.sort();
+           alert(`Array sorted in Ascending order is:\n [${arr}]`); 
+        }
+        function sortArrayDescending(){
+            arr.reverse();
+            alert(`Array sorted in Descending order is:\n [${arr}]`); 
+
+        }
+        function sliceArray(){
+            var sliceArray = arr.slice(1,4);
+            alert(`Array after SLICING elements 2, 3 ,4 w.r indexes 1,2,3,4(not inclusive) is:\n [${sliceArray}]`); 
+
+        }
+        function spliceArray(){
+            debugger;
+            var spliceArray = arr.splice(2, 3, 7);
+            alert(`Array after SPLICING 1 element-(7) at Index 2  is:\n [${spliceArray}]\n ${arr}`); 
+        }
+    </script>
+</body>
+</html>

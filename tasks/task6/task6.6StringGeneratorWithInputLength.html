@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Generator Based on Input Length</title>
+</head>
+<body>
+    <center>
+        <label>Enter a value :</label>&nbsp;
+        <input id="input_Length" placeholder="Enter a value"><br><br>
+        <button id="button_Generate" type="submit" onclick="stringGenerator()">Generate String</button>
+        <p id="para_StringGenerated"></p>
+    </center>
+    <script>
+        function stringGenerator(){
+            debugger;
+            var stringlength = document.getElementById("input_Length").value;
+            var para = document.getElementById("para_StringGenerated");
+            var generatedString = '';
+            const string = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm`1234567890-=[];,./?><:{}+_)(*&^%$#@!~";
+            for(i=0;i<stringlength;i++){
+                const idx = Math.floor(Math.random() * string.length);
+                generatedString = generatedString + string.charAt(idx);
+            }
+            para.innerHTML = generatedString;
+        }
+    </script>
+</body>
+</html>

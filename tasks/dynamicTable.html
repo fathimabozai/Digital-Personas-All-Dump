@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+</head>
+<body>
+    <button onclick="createTable()">Create Table</button>
+    <script>
+        function createTable(){
+            //creating a table element and storing it
+            var table = document.createElement("table");
+            var tableBody = document.createElement("tbody");
+            for(var i=0; i<5; i++){
+                var tableRow = document.createElement("tr");
+                for(var j=0; j<4; j++){
+                    var tableData = document.createElement("td");
+                    var cellText = document.createTextNode("Row "+i+" Cell "+j);
+                    //adds value inside cell
+                    tableData.appendChild(cellText);
+                    //adds data in row
+                    tableRow.appendChild(tableData);
+                }
+                //adds rows to the body
+                tableBody.appendChild(tableRow);        
+            }
+            table.appendChild(tableBody);
+            document.body.appendChild(table);
+            table.setAttribute("border", "2");
+        }
+    </script>
+</body>
+</html>

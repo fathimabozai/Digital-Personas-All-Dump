@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest of All</title>
+</head>
+<body>
+    <center>
+        <label>Enter number 1: </label>&nbsp;
+        <input id="input_Number1" type="number" placeholder="Enter first number"><br><br>
+        <label>Enter number 2: </label>&nbsp;
+        <input id="input_Number2" type="number" placeholder="Enter second number"><br><br>
+        <label>Enter number 3: </label>&nbsp;
+        <input id="input_Number3" type="number" placeholder="Enter third number"><br><br>
+        <button id="button_Largest" onclick="largestOfAll()">Find Largest</button>
+        <p id="para_Largest"></p>
+    </center>
+    <script>
+        function largestOfAll(){
+            var number1 = parseInt(document.getElementById("input_Number1").value);
+            var number2 = parseInt(document.getElementById("input_Number2").value);
+            var number3 = parseInt(document.getElementById("input_Number3").value);
+            var para = document.getElementById("para_Largest");
+            debugger;
+            if(number1 === number2 && number2 === number3 && number3 === number1){
+                //all same values
+                para.innerHTML = `${number1}, ${number2} and ${number3} are equal.`
+            }else if(number1 >= number2 && number1 >= number3){
+                //num1 is greater
+                para.innerHTML = `${number1} is greater than ${number2} and ${number3}.`
+            }else if(number2 >= number1 && number2 >= number3){
+                //num2 is greater
+                para.innerHTML = `${number2} is greater than ${number1} and ${number3}.`  
+            }else{
+                //num3 is greater
+                para.innerHTML = `${number3} is greater than ${number1} and ${number2}.`
+            }
+        }
+    </script>
+</body>
+</html>

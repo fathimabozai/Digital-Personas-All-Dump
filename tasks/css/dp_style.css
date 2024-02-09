@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(154, 205, 247);
+} 
+header {
+    margin-top: 20px;
+}
+nav {
+    background-color: rgb(32, 104, 250); 
+    width: 1520px; 
+    height: 60px
+}
+button {
+    padding : 10px;
+    background-color: rgb(32, 104, 250);
+    border : 0px; 
+    font-weight: bold;
+    cursor: pointer;
+    /* text-decoration: none; */
+}
+.buttonH {
+    transition-duration: 0.4s;
+  }
+.buttonH:hover{
+    color: white;
+}
+ ul {
+    float: right;
+    margin-right: 40px; 
+}
+ 
+.pdiv{
+    float: left;
+    margin: 50px 50px;
+    width: 40%;
+    height: 50%;
+}
+.imgdiv{
+    float: right;
+    margin: 50px 50px;
+    width: 30%;
+    height: 50%;
+}
+footer{
+    background-color: rgb(32, 104, 250); 
+    margin-top: 570px;
+    width: 1520px; 
+    height: 60px
+}
+a{  
+    color: black;
+    font-weight: bold; 
+    text-decoration: none;
+}
+/* .locationImage {
+    float: left;
+} */
+
+

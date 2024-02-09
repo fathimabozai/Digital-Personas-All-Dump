@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Conversion</title>
+</head>
+<body>
+    <label>Enter a Decimal : </label>&nbsp;
+    <input id="input_Decimal" type="number" placeholder="Enter a Decimal">&nbsp;<br><br>
+    <button id="button_Binary" type="submit" onclick="decimalToBinary()">Convert To Binary</button>
+    <p id="para_Binary"></p><br>
+
+    <label>Enter a Binary : </label>&nbsp;
+    <input id="input_Binary" type="text" min="0" max="1" placeholder="Enter a Binary Number">&nbsp; <br><br>
+    <button id="button_Hexa" type="submit" onclick="binaryToHexa()">Convert To HexaDecimal</button>
+    <p id="para_Hexa"></p><br>
+
+    <label>Enter a Hexa : </label>&nbsp;
+    <input id="input_Hexa" placeholder="Enter a Hexa-Dec number">&nbsp; <br><br>
+    <button id="button_Decimal" type="submit" onclick="hexaToDecimal()">Convert To Binary</button>
+    <p id="para_Decimal"></p><br>
+
+    <script>
+        function decimalToBinary(){
+            debugger;
+            var decimal = parseInt(document.getElementById("input_Decimal").value);
+            var binary = decimal.toString(2);
+            document.getElementById("para_Binary").innerHTML=`The Binary Value of the decimal ${decimal} is ${binary}`;
+        }
+        function binaryToHexa(){
+            debugger;
+            var binary = document.getElementById("input_Binary").value;
+            var hexa = parseInt(binary, 2).toString(16).toUpperCase();
+            document.getElementById("para_Hexa").innerHTML=`The Hexa-Decimal Value of the binary number ${binary} is ${hexa}`; 
+        }
+        function hexaToDecimal(){
+            debugger;
+            var hexa = document.getElementById("input_Hexa").value;
+            var binary = parseInt(hexa,16).toString(2);
+            document.getElementById("para_Decimal").innerHTML=`The Binary Value of the Hexa-decimal ${hexa} is ${binary}`;
+        }
+    </script>
+</body>
+</html>

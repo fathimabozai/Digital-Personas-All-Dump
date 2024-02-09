@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Starts and Ends Check</title>
+</head>
+<body>
+    <center>
+        <label for="input_Sentence">Enter a Sentence:</label>&nbsp;
+        <input id="input_Sentence" placeholder="Enter Sentence"><br><br>
+
+        <label for="input_StartLetter">Enter Starting Character :</label>&nbsp;
+        <input id="input_StartLetter" placeholder="Enter Starting Character"><br><br>
+
+        <label for="input_EndLetter">Enter Ending Character :</label>&nbsp;
+        <input id="input_EndLetter" placeholder="Enter Ending Character"><br><br>
+
+        <button id="button_Check" type="submit" onclick="checkSentence()">Check Senetnce</button>
+        <p id="para_Sentence"></p>
+    </center>
+    <script>
+        function checkSentence(){
+            debugger;
+            var inputSentence = document.getElementById("input_Sentence").value;
+            var startCharacter = document.getElementById("input_StartLetter").value;
+            var endCharacter =  document.getElementById("input_EndLetter").value;
+            var para = document.getElementById("para_Sentence");
+            var firstIndex=inputSentence.charAt(0);
+            var lastIndex = inputSentence.charAt(inputSentence.length-1);
+            if(inputSentence == ""){
+                para.innerHTML = `Please enter a sentence.`;
+            }else if(firstIndex == startCharacter && lastIndex != endCharacter){
+                para.innerHTML = `Sentence starts with ${startCharacter} but doesn't ends with ${endCharacter}`;     
+            }else if(firstIndex != startCharacter && lastIndex == endCharacter ){
+                para.innerHTML = `Sentence doesn't starts with ${startCharacter} but ends with ${endCharacter}`;
+            }else if(firstIndex == startCharacter && lastIndex == endCharacter ){
+                para.innerHTML = `Sentence does starts with ${startCharacter} as well as ends with ${endCharacter}`;
+            }else if(firstIndex != startCharacter && lastIndex != endCharacter ){
+                para.innerHTML = `Sentence neither starts with ${startCharacter} nor ends with ${endCharacter}`;
+            }
+        }
+    </script>
+
+</body>
+</html>

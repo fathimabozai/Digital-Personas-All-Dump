@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Practice</title>
+    <link rel="stylesheet" href="/css/basic_Form.css" />
+</head>
+<body>
+    <!-- Values entered in Employee_Form are displayed in Employee_Details in a Single Page -->
+    <header>
+        <h1><i>Employee Information</i></h1>
+    </header>
+
+    <main>
+        <!-- This div(div_my_container) aligns Left and Right section side by side -->
+         <div id="div_my_Container" class="div_my_Container" name="div_my_Container"> 
+            <section id="left_Section" class="left_Section">
+                <h3><u>Employee Form</u></h3>
+              <div class="div_Emp_Info_Form">
+                <div id="div_Emp_Info_Form_Labels" class="div_Emp_Info_Form_Labels" >
+                    <!-- Employee Name -->
+                    <label for="input_Employee_First_Name" >Employee Name</label>    <br><br>                
+                    <!-- Employee ID -->
+                    <label for="input_Employee_Id">ID</label>   <br><br>
+                    <!-- Employee Gender -->
+                    <label for="select_Employee_Gender">Gender</label>   <br><br>              
+                    <!-- Employee Join Date -->
+                    <label for="input_Employee_Joining_Date">D-O-J</label> <br><br>
+                    <!-- Employee E-mail Address -->
+                    <label for="input_Employee_Email_address">E-mail</label>    <br><br>
+                    <!-- Employee Proof Document -->
+                    <label for="input_Employee_Proof_Document">Attach File</label>   <br><br><br>
+                </div>
+                <div id="div_Emp_Info_Form_Inputs" class="div_Emp_Info_Form_Inputs">
+                    <form id="employee_Input_Form">
+                        <!-- Employee Name -->
+                        <input type="text" id="input_Employee_First_Name" class="input_Employee_First_Name" name="input_Employee_First_Name" placeholder="First Name"> &nbsp;                        
+                        <!-- <label for="input_Employee_Last_Name" hidden></label> -->
+                        <input type="text" id="input_Employee_Last_Name" class="input_Employee_Last_Name" name="input_Employee_Last_Name" placeholder="Last Name">  <br><br>            
+                        <!-- Employee ID -->
+                        <input type="text" id="input_Employee_Id" class="input_Employee_Id" name="input_Employee_Id" placeholder=" Employee ID">  <br><br>
+                        <!-- Employee Gender -->
+                        <select id="select_Employee_Gender" class="select_Employee_Gender" name="select_Employee_Gender">                          
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Others">Others</option>    
+                            <option value="" selected>No Selection</option>                        
+                        </select>   <br><br>
+                        <!-- Employee Join Date -->
+                        <input type="date" id="input_Employee_Joining_Date" class="input_Employee_Joining_Date" name="input_Employee_Joining_Date"> <br><br>
+                        <!-- Employee E-mail Address -->
+                        <input type="email" id="input_Employee_Email_address" class="input_Employee_Email_address" name="input_Employee_Email_address" placeholder="E-Mail Address">    <br><br>
+                        <!-- Employee Proof Document -->
+                        <input type="file" id="input_Employee_Proof_Document" class="input_Employee_Proof_Document" name="input_Employee_Proof_Document">
+                    </form>
+                </div>
+              </div>
+                <!-- Button inside left section || outside labelsname and input -->
+                <div id="div_Emp_Info_Form_Submit_Button" class="div_Emp_Info_Form_Submit_Button">
+                    <button type="submit" id="button_New_Record" class="button_New_Record" name="button_New_Record" onclick="onClick_Clear_Form()" disabled>New Record</button>
+                    <button type="submit" id="button_Submit" class="button_Submit" name="button_Submit" value="Submit" onclick="onSubmit_DisplayFormText()">Submit</button>                                              
+                </div> 
+            </section> 
+
+            <section id="right_Section" class="right_Section">
+                <h3 style="background-color: rgb(243, 115, 224);"><u>Employee Details</u></h3>
+                <div class="div_Emp_Details" id="div_Emp_Details">
+                    <div id="div_Emp_Details_Labels" class="div_Emp_Details_Labels">
+                        <!-- Employee Name -->
+                    <label for="input_Employee_First_Name" >Employee Name</label>    <br><br>                
+                    <!-- Employee ID -->
+                    <label for="input_Employee_Id">ID</label>   <br><br>
+                    <!-- Employee Gender -->
+                    <label for="select_Employee_Gender">Gender</label>   <br><br>              
+                    <!-- Employee Join Date -->
+                    <label for="input_Employee_Joining_Date">D-O-J</label> <br><br>
+                    <!-- Employee E-mail Address -->
+                    <label for="input_Employee_Email_address">E-mail</label>    <br><br>
+                    <!-- Employee Proof Document -->
+                    <label for="input_Employee_Proof_Document">Attach File</label>   <br><br>
+                    <label id="input_Employee_Proof_Document_Extension">Extension</label>   <br><br><br>
+
+                    </div>
+                    <div id="div_Emp_Details_Text" class="div_Emp_Details_Labels">
+                        
+                        <p id="text_Employee_Name"></p>
+                        <p id="text_Employee_Id"></p>
+                        <p id="text_Employee_Gender"></p>
+                        <p id="text_Employee_Joining_Date"></p>
+                        <p id="text_Employee_Email_Address"></p>
+                        <p id="text_Employee_Document"></p></p>
+                        <p id="text_Employee_Document_Extension"></p>
+                       
+
+                        <input type="text" id="new_Input_Employee_First_Name" class="edit_Input" placeholder="First Name" style="border: 0px;  margin-left: 100px; text-transform: capitalize;" hidden >
+                        <input type="text" id="new_Input_Employee_Last_Name" class="edit_Input" placeholder="Last Name" style="border: 0px;  margin-left: 100px; text-transform: capitalize;" hidden ><br><br>
+                        <input type="text" id="new_Input_Employee_Id" class="edit_Input" placeholder="Employee ID" style="border: 0px; margin-left: 100px;" hidden ><br><br>
+                        <select id="new_Select_Employee_Gender" class="edit_Input" style="border: 0px; margin-left: 100px;" hidden>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Others">Others</option>    
+                            <option value="" selected>No Selection</option>                        
+                        </select>   <br><br>
+                        <input type="date"  id="new_Input_Employee_Joining_Date" class="edit_Input" style="border: 0px;  margin-left: 100px;" hidden><br><br>
+                        <input type="email" id="new_Input_Employee_Email_Address" class="edit_Input" placeholder="E-Mail Address" style="border: 0px;  margin-left: 100px;" hidden><br><br>
+                        <input type="file" id="new_Input_Employee_Document" class="edit_Input" style="border: 0px; margin-left: 100px;" hidden><br><br>
+
+                    </div>
+                </div>
+
+                <div id="div_Emp_Details_Edit_Button" class="div_Emp_Details_Edit_Button"> 
+                    <button type="submit" id="button_Save" class = "button_Save" name="button_Save" value="Save" onclick="onSave_DisplayFormText()" hidden>Save</button>
+                    <button type="submit" id="button_Edit" class = "button_Edit" name="button_Edit" value="Edit" onclick="onEdit_disableForm()" hidden>Edit</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        var inputFirstName = document.getElementById("input_Employee_First_Name");
+        var inputLastName =  document.getElementById("input_Employee_Last_Name");
+        var inputId = document.getElementById("input_Employee_Id");
+        var selectGender =document.getElementById("select_Employee_Gender");
+        var inputDOJ =document.getElementById("input_Employee_Joining_Date");
+        var inputEMail =document.getElementById("input_Employee_Email_address");
+        var inputDocument =document.getElementById("input_Employee_Proof_Document");
+        var submitButton = document.getElementById("button_Submit");
+        var editButton = document.getElementById("button_Edit");
+        var saveButton = document.getElementById("button_Save");
+        var newRecordButton = document.getElementById("button_New_Record");
+        var firstName, lastName, employeeId, employeeGender, employeeDateofJoining, employeeEmailAddress, employeeDocument, extension;
+        var para_Name = document.getElementById("text_Employee_Name");
+        var para_Id = document.getElementById("text_Employee_Id");
+        var para_Gender = document.getElementById("text_Employee_Gender");
+        var para_DOJ = document.getElementById("text_Employee_Joining_Date");
+        var para_EMail = document.getElementById("text_Employee_Email_Address");
+        var para_Document = document.getElementById("text_Employee_Document");
+        var para_Document_Extension = document.getElementById("text_Employee_Document_Extension");
+        var editFirstName = document.getElementById("new_Input_Employee_First_Name");
+        var editLastName = document.getElementById("new_Input_Employee_Last_Name");
+        var editEmployeeId = document.getElementById("new_Input_Employee_Id");
+        var editEmployeeGender = document.getElementById("new_Select_Employee_Gender");
+        var editEmployeeDOJ = document.getElementById("new_Input_Employee_Joining_Date");
+        var editEmployeeEMail = document.getElementById("new_Input_Employee_Email_Address");
+        var editEmployeeProof = document.getElementById("new_Input_Employee_Document");
+          
+        function onSubmit_DisplayFormText(){
+            firstName = inputFirstName.value;   
+            lastName = inputLastName.value;     
+            para_Name.innerHTML = firstName + " " +lastName;
+
+            employeeId = inputId.value;
+            para_Id.innerHTML = employeeId;
+
+            employeeGender = selectGender.value;
+            para_Gender.innerHTML = employeeGender;
+
+            employeeDateofJoining = inputDOJ.value;
+            para_DOJ.innerHTML = employeeDateofJoining;
+
+            employeeEmailAddress = inputEMail.value;
+            para_EMail.innerHTML = employeeEmailAddress;
+
+            employeeDocument = inputDocument.value;
+            para_Document.innerHTML = employeeDocument;
+
+            extension = employeeDocument.split('.').pop();
+            para_Document_Extension.innerHTML = extension;
+            debugger;
+
+            newRecordButton.disabled = false;
+            submitButton.disabled = true;
+
+            editButton.hidden = false;
+
+            //inputFirstName.setAttribute('readOnly', true);
+            inputFirstName.disabled = true;
+            //inputLastName.setAttribute('readOnly',true);
+            inputLastName.disabled = true;
+            //inputId.setAttribute('readOnly', true); 
+            inputId.disabled = true;
+            selectGender.disabled = true; 
+            //inputDOJ.setAttribute('readOnly', true);
+            inputDOJ.disabled = true; 
+            //inputEMail.setAttribute('readOnly', true);
+            inputEMail.disabled = true; 
+            inputDocument.disabled = true;
+        }
+
+        function onEdit_disableForm(){
+            console.log("Edit button is working"); 
+                        
+            //right section
+            //clearing <p> tag
+            para_Name.innerHTML = "";
+            para_Id.innerHTML = "";
+            para_Gender.innerHTML = "";
+            para_DOJ.innerHTML = "";
+            para_EMail.innerHTML = "";
+            para_Document.innerHTML = "";
+            para_Document_Extension.innerHTML = "";            
+
+            //putting editable form
+            editFirstName.hidden = false;        
+            editLastName.hidden = false;           
+            editEmployeeId.hidden = false;
+            editEmployeeGender.hidden = false;
+            editEmployeeDOJ.hidden = false;
+            editEmployeeEMail.hidden = false;
+            editEmployeeProof.hidden = false;            
+
+            //clearing extension label
+            document.getElementById("input_Employee_Proof_Document_Extension").innerHTML = "";
+
+            editFirstName.value = inputFirstName.value;
+            editLastName.value = inputLastName.value;
+            editEmployeeId.value = inputId.value;
+            editEmployeeGender.value = selectGender.value;
+            editEmployeeDOJ.value = inputDOJ.value;
+            editEmployeeEMail.value = inputEMail.value;
+            var newFileName =  editEmployeeProof.value;
+
+            //clearing left section
+            inputFirstName.value="";
+            inputLastName.value="";
+            inputId.value="";
+            selectGender.value = "";
+            inputDOJ.value="";
+            inputEMail.value=""; 
+            inputDocument.value="";
+
+            editButton.hidden = true;
+            saveButton.hidden = false;
+      
+            
+            
+            
+        }     
+
+        function onSave_DisplayFormText(){
+
+            editFirstName.hidden = true;
+            editLastName.hidden = true;                  
+            editEmployeeId.hidden = true;
+            editEmployeeGender.hidden = true; 
+            editEmployeeDOJ.hidden = true; 
+            editEmployeeEMail.hidden = true; 
+            editEmployeeProof.hidden = true; 
+ 
+
+            var newFirstName = editFirstName.value;   
+            var newLastName = editLastName.value;     
+            para_Name.innerHTML = newFirstName + " " +newLastName;
+
+            var newEmployeeId = editEmployeeId.value;
+            para_Id.innerHTML = newEmployeeId;
+
+            var newEmployeeGender = editEmployeeGender.value;
+            para_Gender.innerHTML = newEmployeeGender;
+
+            var newEmployeeDateofJoining = editEmployeeDOJ.value;
+            para_DOJ.innerHTML = newEmployeeDateofJoining;
+
+            var newEmployeeEmailAddress = editEmployeeEMail.value;
+            para_EMail.innerHTML = newEmployeeEmailAddress;
+
+            var newEmployeeDocument = editEmployeeProof.value;
+            para_Document.innerHTML = newEmployeeDocument;
+
+            // document.getElementById("input_Employee_Proof_Document_Extension").innerHTML="Extension :";
+            
+            // var editEmployeeDocumentExtension = editEmployeeDocument.split('.').pop();
+            // document.getElementById("text_Employee_Document_Extension").value = editEmployeeDocumentExtension;
+
+            saveButton.hidden = true;
+            editButton.hidden = false;
+
+        } 
+        function onClick_Clear_Form(){
+            window.location.reload();
+        }       
+    </script>
+</body>
+</html>

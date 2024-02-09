@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods Practice</title>
+</head>
+<body>
+    <label>Enter a string</label>
+    <input id="input_String" type="text" style="text-transform: capitalize;"><br><br>
+    <button id="btn_char" value="submit" onclick="stringOperations()">All Char Operations</button>
+    <p id="para1_String"></p>
+    <p id="para2_String"></p>
+    <p id="para3_String"></p>
+    <p id="para4_String"></p>
+
+
+    <script>
+        function stringOperations(){
+            debugger;
+            var stringValue = document.getElementById("input_String").value;
+            var para1 = document.getElementById("para1_String");
+            var para2 = document.getElementById("para2_String");
+            var para3 = document.getElementById("para3_String");
+            var para4 = document.getElementById("para4_String");
+
+            var firstLetter = stringValue.charAt(0);
+            para1.innerHTML = `The first letter in ${stringValue} is : "${firstLetter.toUpperCase()}" by accesing first index`;
+
+            var lastLetter = stringValue.charAt(stringValue.length-1);
+            para2.innerHTML = `The last letter in ${stringValue} is : "${lastLetter.toUpperCase()}" by accessing last index`;
+
+            var lastLetterNegative = stringValue.at(-1);
+            para3.innerHTML = `The last letter in ${stringValue} is : "${lastLetterNegative.toUpperCase()}" by providing -ve index in at()`;
+
+            var concat = stringValue + "A";
+            para4.innerHTML = `String after concatenating 'A' is ${concat.toLowerCase()}`;
+
+        }  
+    </script>
+</body>
+</html>

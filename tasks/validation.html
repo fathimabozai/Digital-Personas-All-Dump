@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name:</label>
+    <input type="text" id="input_Name" placeholder="Enter Name"><br><br>
+    <button id="button_Submit" onclick="validate()">Submit</button>
+    <script>
+        var regExpName = /^[A-Za-z]+$/; 
+        function validate(){
+            var inputValueName = document.getElementById("input_Name").value;
+            if(inputValueName.match(regExpName)){
+                alert("Validation is satisfied!");
+            }else{
+                alert("Please enter correct name");
+            }
+        } 
+    </script>
+</body>
+</html>

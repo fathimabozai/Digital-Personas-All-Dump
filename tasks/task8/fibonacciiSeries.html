@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonaccii Series/Sequence</title>
+</head>
+<body>
+    <label>Enter a number: </label>&nbsp;
+    <input id="input_Number" type="number"><br><br>
+    <button id="button_Find" onclick="fibonacciiSeries()">Find</button>
+    <p id="para_fibonacciiValues"></p>
+    <script>
+        
+        function fibonacciiSeries(){
+            var number = document.getElementById("input_Number").value;
+            var para = document.getElementById("para_fibonacciiValues");
+            debugger;
+            var fib=[0,1];
+            if(number < 0){
+                para.innerHTML= `Fibonaccii series cannot be generated!`
+            }
+            else if(number == 0){
+                para.innerHTML=`Fibonaccii of 0 doesn't exists`
+            }else if(number == 1){
+                para.innerHTML=`Fibonaccii of 1 is 0`   
+            }else if(number == 2){
+                para.innerHTML=`Fibonaccii of 2 is 0, 1`   
+            }else{
+                for(i=2; i<number; i++){
+                fib[i]=fib[i-2]+fib[i-1];
+                para.innerHTML = `[${fib}]`;
+            }
+            } 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myContainer {
+            display: flex;
+        }
+    </style>
+</head>
+<body>   
+    <!-- <div class="myContainer">
+        <div class="left_layout"> -->
+            <label for="idInp_Fname">FirstName</label>
+            <input id="idInp_Fname" type="text" /> <br>
+            <button id="id_Submit_Btn" style="width: 50px; height:20px" onclick="onSubmit_DisplayText()">Submit</button>
+        <!-- </div>
+        <div class="right_Layout> -->
+            <p id="id_Para"></p>
+        <!-- </div>
+</div> -->
+    <script>
+        function onSubmit_DisplayText(){
+            debugger;
+            var fName = document.getElementById("idInp_Fname").value;
+            document.getElementById("id_Para").innerHTML = fName;
+        }
+    </script>
+</body>
+</html>

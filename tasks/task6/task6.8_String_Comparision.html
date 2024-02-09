@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Comparision</title>
+</head>
+<body>
+    <center>    <h2>Compares the given Strings</h2>
+        <label for="input_String1">Enter a String : </label>&nbsp;
+        <input id="input_String1" type="text" placeholder="Enter String"><br><br>
+        <label for="input_String2">Enter a String : </label>&nbsp;
+        <input id="input_String2" type="text" placeholder="Enter String"><br><br><br>
+        <button id="button_Compare" type="submit" value="compare" onclick="compareStrings()">Compare</button><br><br>
+        <p id="para_CompareText"></p>
+    </center>
+    <script>
+        function compareStrings(){
+            debugger;
+            var string1Value = document.getElementById("input_String1").value;
+            var string2Value = document.getElementById("input_String2").value;
+            var stringResult = string1Value.localeCompare(string2Value);
+            var paraText = document.getElementById("para_CompareText");
+            if(stringResult == 0){
+                paraText.innerHTML = "Both strings are equal"
+            }else if(stringResult == -1){
+                paraText.innerHTML = "String 1 is greater than String 2"
+            }else if(stringResult == 1){
+                paraText.innerHTML = "String 1 is lower than String 2"
+            }
+            // if(string1Value == "" || string2Value == ""){
+            //     paraText.innerHTML = "Cannot compare, as either one string or both strings are empty !!!"
+            // }else if(string1Value.length == string2Value.length){
+            //     paraText.innerHTML = `Both Strings ${string1Value} , ${string2Value} are of equal length ${string1Value.length} !!!`
+            // }else if (string1Value.length > string2Value.length){
+            //     paraText.innerHTML = `${string1Value} (${string1Value.length}) contains more characters than ${string2Value} (${string2Value.length})`;
+            // }
+            // else if(string1Value.length < string2Value.length){
+            //     paraText.innerHTML = `${string1Value} (${string1Value.length}) contains less characters than ${string2Value} (${string2Value.length})`;    
+            // }
+        }
+    </script>
+</body>
+</html>

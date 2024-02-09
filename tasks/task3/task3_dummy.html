@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form Practice</title>
+    <link rel="stylesheet" href="/css/task3_J_S_Basics_Form.css" />
+</head>
+<body>
+    <header>
+        <h1><i>Employee Information</i></h1>
+    </header> 
+    <main>
+        <div id="div_my_Container" class="div_my_Container" name="div_my_Container">
+            <section id="left_Section_Emp_Info_Form" class="left_Section_Emp_Info_Form">
+                <h3><u>Employee Form</u></h3>
+                    <div id="div_Emp_Info_Form_labels" class="div_Emp_Info_Form_labels">
+                        <div id="div_Emp_Info_Form_labels_Name" class="div_Emp_Info_Form_labels_Name" >
+                            <!-- Employee Name -->
+                            <label for="input_Employee_First_Name" >Employee Name</label>    <br><br>       
+                            <!-- Employee ID -->
+                            <label for="input_Employee_Id">ID</label>   <br><br>
+                            <!-- Employee Gender -->
+                            <label for="select_Employee_Gender">Gender</label>   <br><br>                    
+                            <!-- Employee Join Date -->
+                            <label for="input_Employee_Joining_Date">D-O-J</label> <br><br>
+                            <!-- Employee E-mail Address -->
+                            <label for="input_Employee_Email_address">E-mail</label>    <br><br>
+                            <!-- Employee Proof Document -->
+                            <label for="input_Employee_Proof_Document">Attach File</label>   <br><br>
+                        </div>
+                        <div id="div_Emp_Info_Form_labels_Input" class="div_Emp_Info_Form_labels_Input">
+                            <!-- Employee Name -->
+                            <input "type="text" id="input_Employee_First_Name" class="input_Employee_First_Name" name="input_Employee_First_Name"> &nbsp;                        
+                            <!-- <label for="input_Employee_Last_Name" hidden></label> -->
+                            <input type="text" id="input_Employee_Last_Name" class="input_Employee_Last_Name" name="input_Employee_Last_Name">  <br><br>
+                            <!-- Employee ID -->
+                            <input type="text" id="input_Employee_Id" class="input_Employee_Id" name="input_Employee_Id">  <br><br>
+                            <!-- Employee Gender -->
+                            <select id="select_Employee_Gender" class="select_Employee_Gender" name="select_Employee_Gender">                            
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Others">Others</option>    
+                                <option value="" selected>No Selection</option>                        
+                            </select>   <br><br>
+                            <!-- Employee Join Date -->
+                            <input type="date" id="input_Employee_Joining_Date" class="input_Employee_Joining_Date" name="input_Employee_Joining_Date"> <br><br>
+                            <!-- Employee E-mail Address -->
+                            <input type="email" id="input_Employee_Email_address" class="input_Employee_Email_address" name="input_Employee_Email_address">    <br><br>
+                            <!-- Employee Proof Document -->
+                            <input type="file" id="input_Employee_Proof_Document" class="input_Employee_Proof_Document" name="input_Employee_Proof_Document">
+                            <div id="div_Emp_Info_Form_Submit_Button" class="div_Emp_Info_Form_Submit_Button">
+                                <button type="submit" id="button_Submit" class="button_Submit" name="button_Submit" value="Submit" onclick="onSubmit_DisplayFormText()">Submit</button>                                              
+                            </div> 
+                        </div>                       
+                    </div>                                          
+            </section>
+
+            <section id="right_Section_Emp_Details" class="right_Section_Emp_Details">
+                <h3><u>Employee Details</u></h3>
+                    <div id="div_Emp_Details_Text" class="div_Emp_Details_Text">
+                        <p id="text_Employee_Name"> Name : </p>
+                        <p id="text_Employee_Id"> ID : </p>
+                        <p id="text_Employee_Gender"> Gender :</p>
+                        <p id="text_Employee_Joining_Date"> D-O-J : </p>
+                        <p id="text_Employee_Email_Address"> E-Mail : </p>
+                        <p id="text_Employee_Document"> Proof : </p>
+                        <div id="div_Emp_Details_Text_Edit_Button" class="div_Emp_Details_Text_Edit_Button"> 
+                            <button type="submit" id="button_Edit" class = "button_Edit" name="button_Edit" value="Edit">Edit</button>
+                        </div>
+                    </div>                  
+            </section>
+        </div>        
+    </main>
+    <script>
+        function onSubmit_DisplayFormText(){
+            debugger;
+            let firstName = document.getElementById("input_Employee_First_Name").value;   
+            let lastName = document.getElementById("input_Employee_Last_Name").value;     
+            document.getElementById("text_Employee_Name").innerHTML = "Name : " +firstName + " " +lastName;
+
+            let employeeId = document.getElementById("input_Employee_Id").value;
+            document.getElementById("text_Employee_Id").innerHTML = "ID : " + employeeId;
+
+            let employeeGender = document.getElementById("select_Employee_Gender").value;
+            document.getElementById("text_Employee_Gender").innerHTML = "Gender : " +employeeGender;
+
+            let employeeDateofJoining = document.getElementById("input_Employee_Joining_Date").value;
+            document.getElementById("text_Employee_Joining_Date").innerHTML = "D-O-J : " +employeeDateofJoining;
+
+            let employeeEmailAddress = document.getElementById("input_Employee_Email_address").value;
+            document.getElementById("text_Employee_Email_Address").innerHTML = "E-Mail : " +employeeEmailAddress;
+
+            let employeeDocument = document.getElementById("input_Employee_Proof_Document").value;
+            document.getElementById("text_Employee_Document").innerHTML = "Proof : " +employeeDocument;
+        }
+    </script>
+</body>
+</html>

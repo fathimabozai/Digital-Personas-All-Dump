@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <center>
+        <label>Enter a word: </label>&nbsp;
+        <input id="input_Word" type="text"><br><br>
+        <button id="button_Find" onclick="isPalindrome()">Find</button>
+    </center>
+
+    <script>
+       function isPalindrome(){
+        debugger;
+        var input = document.getElementById("input_Word").value;
+        var re = /[^A-Za-z0-9]/gi;
+        var word = input.toLowerCase().replace(re, '');
+        //convert String to Array
+        var wordArray = word.split("");
+        //reversing array of the given word
+        var reverseArray = wordArray.reverse();
+        //converting array to string
+        var reverseWord =  reverseArray.join("");
+        if(word === ""){
+            alert("Please enter a word");
+        } else if (word === reverseWord.toLowerCase()) {
+            alert("Given word "+word.toUpperCase()+" is Palindrome !!");
+        } else {
+            alert("Given word "+word.toUpperCase()+" is not a Palindrome !!");
+        }
+       } 
+    </script>
+</body>
+</html>

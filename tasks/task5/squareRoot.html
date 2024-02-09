@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Enter a number</label>
+    <input type="number" id="inputNumber" placeholder="Enter a number"><br><br>
+    <button type="submit" id="submitButton" onclick="squareRoot()">Submit</button>
+    <p id="sqrtText"></p>
+    <script>        
+        function squareRoot(){
+            var num = document.getElementById("inputNumber");
+            var para = document.getElementById("sqrtText");
+            debugger;
+            var squareRt = Math.sqrt(num.value);
+            para.innerHTML = `The square root of ${num.value} is : ${squareRt}`;
+        }
+    </script>
+</body>
+</html>

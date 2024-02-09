@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End With Same Digit</title>
+</head>
+<body>
+    <label>Enter First Number: </label>&nbsp;
+    <input id="input_Number1" type="number"><br><br>
+    <label>Enter Second Number: </label>&nbsp;
+    <input id="input_Number2" type="number"><br><br>
+    <button id="button_Check" onclick="isLastDigitSame()">Find</button>
+    <p id="para_LastDigit"></p>
+    <script>
+        function isLastDigitSame(){
+            debugger;
+            var num1 = document.getElementById("input_Number1").value;
+            var num2 = document.getElementById("input_Number2").value;
+            var para = document.getElementById("para_LastDigit");
+            if(num1 == "" && num2 == ""){
+                para.innerHTML = `Both Values are Empty !`;
+            }else{
+                if(num1.charAt(num1.length-1) == num2.charAt(num2.length-1)){
+                    para.innerHTML = `${num1} and ${num2} ends with same digit ${num1.charAt(num1.length-1)}`;
+                }else{
+                    para.innerHTML = `${num1} and ${num2} doesn't end with same digit`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

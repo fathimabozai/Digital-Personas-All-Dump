@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="firstName">First Name : </label>
+    <input type="text" id="firstName" placeholder="First Name"><br><br>
+    <label for="LastName">Last Name :</label>
+    <input type="text" id="LastName" placeholder="Last Name"> <br><br>
+    <button type="submit" id="btn_Submit" value ="submit" onclick="displayText()">Submit !</button><br><br>
+    <p id="textFirstName"></p>
+    <p id="textLastName"></p>    
+    
+    <br><br><br><br><br><br>
+
+    <label for="editFirstName">First Name : </label>
+    <input type="text" id="editFirstName" placeholder="First Name"><br><br>
+    <label for="editLastName">Last Name :</label>
+    <input type="text" id="editLastName" placeholder="Last Name"> <br><br>
+    <button type="submit" id="btn_Edit" value ="edit" onclick="editText()">Edit !</button><br><br>
+
+    <input type="value">
+
+    <script>
+        function displayText(){
+            var firstName = document.getElementById("firstName").value;
+            document.getElementById("textFirstName").innerHTML=firstName;
+        }        
+        function editText(){
+         document.getElementById("editFirstName").value = document.getElementById("firstName").value;
+        }
+    </script>
+</body>
+</html>

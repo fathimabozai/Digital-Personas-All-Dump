@@ -1,0 +1,107 @@
+ body {
+    background-color: rgb(25, 202, 234);
+}
+header{
+    background-color: rgb(125, 222, 249);
+}
+h3{    
+    color: rgb(25, 23, 23);
+} 
+.row{
+    display: flex;
+}
+.box{
+    background-color: rgb(201, 229, 249);
+    width: 25%;
+    height:400px;
+    overflow:hidden; 
+    text-align: center;
+    justify-content: center;
+    /* white-space: nowrap; */
+}
+.div1{
+    background-color: rgb(74, 246, 51);  
+    width: auto;
+    height: 100px;
+    position: relative;
+    animation-name:div1Ani;
+    animation-duration: 4s; 
+}
+.div2{
+    background-color: rgb(245, 32, 156);
+    width: 100px;
+    height:50px;
+    border-radius: 50%;
+    border:1px solid black;
+    position: relative;
+    animation-name: div2Ani;
+    animation-duration: 8s;
+    animation-iteration-count:  infinite;
+}
+
+.div3{
+    background-color: beige;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    border:2px dashed crimson;
+    animation-name: div3Ani;
+    animation-duration: 2s;
+    position: relative;
+    animation-iteration-count: infinite;
+}
+.div4{
+    background-color: rgb(129, 129, 244);
+    width:100px;
+    height:100px;
+    animation-name: div4Ani;
+    position: relative;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+.div5{
+    background-color: rgb(245, 19, 19);
+    width: 100px;
+    height: 50px;
+    transform: skew(20deg);
+    animation-name: div5Ani;
+    position: relative;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes div1Ani {
+    0% {background-color: rgb(200, 248, 194); left: 0px; top: 0px; text-align: center;}
+    25% {background-color: rgb(147, 154, 248); left: 0px; top: 150px;margin-left: 0px;}
+    50%{background-color: rgb(245, 124, 150); left: 0px; top: 300px;}
+    75%{background-color: rgb(243, 236, 112); left: 0px; top: 450px;}
+    100%{background-color:  rgb(141, 242, 210); left: 0px; top: 600px;}
+}
+
+@keyframes div2Ani {
+    0%{background-color:  rgb(245, 32, 156);left:0px;top:300px; }
+    100% {background-color: rgb(255, 234, 7);left:0px;top:0px; }
+}
+
+@keyframes div3Ani{
+    0%{background-color: rgb(247, 237, 183); left:0px;top:0px; transform: scale(0.5);}
+    33%{background-color: rgb(248, 229, 125); left:130px;top:130px;transform: scale(1.0);}
+    66%{background-color: rgb(246, 218, 59); left:260px;top:260px;transform: scale(1.5);}
+    100%{background-color : rgb(243, 207, 3); left:390px;top:390px;transform:scale(1.0);}    
+}
+
+@keyframes div4Ani{
+    0%{background-color: rgb(40, 38, 40);left:0px;top:100px;}
+    25%{background-color: rgb(227, 25, 227);left:100px;top:0px;}
+    55%{background-color: rgb(2, 2, 236);left:200px;top:100px;}
+    75%{background-color: rgb(21, 164, 10);left:100 px;top: 200px;}
+    100%{background-color: rgb(237, 116, 11);left: 0px;top:100px;}
+}
+@keyframes div5Ani{
+    0%{background-color: rgb(250, 13, 13);left:0px;top:0px;}
+    25%{box-shadow: 1cm; background-color: rgb(255, 151, 5); left:50px;top:200px;border-radius: 50%;}
+    50%{box-shadow: 2cm; background-color: rgb(178, 249, 11);left: 100px;top: 0px; }
+    75%{box-shadow:1cm; background-color: rgb(9, 9, 251);left: 150px;top:200px;transform: skew(-40deg);}
+    100%{box-shadow:2cm; background-color: rgb(252, 10, 171);left: 200px;top: 0px; }
+}

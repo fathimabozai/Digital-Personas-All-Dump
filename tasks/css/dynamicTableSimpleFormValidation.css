@@ -1,0 +1,112 @@
+body{
+    /* background-color: rgb(184, 216, 248); */
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-031.jpg");
+}
+#div_MyContainer{
+    /* background-color: rgb(231, 231, 210); */
+    width: 100%;
+    height:100%;
+}
+#div_FormConatiner{
+    /* background-color:rgb(254, 168, 168) ; */
+    width: 100%;
+    height:40%;    
+}
+#div_Search_AddRowContainer{
+    height:20%;
+    display: flex;
+    margin-top: 1%;
+    margin-left : 1%    
+}
+#div_SearchContainer{
+    /* background-color:rgb(153, 248, 179) ; */
+    width:15%;
+    height : 10%;
+    display: flex;
+    float: left;
+    padding-left: 60%;
+    margin-right: 0%;
+}
+#div_AddRowContainer{
+    width:10%;
+    height : 10%;
+    margin-left:5%;
+    margin-left: 0%;
+}
+#div_TableContainer{
+    /* background-color:rgb(117, 167, 235) ; */
+    margin-top:2%;
+    height:40%;
+}
+#div_FormDataContainer{
+    /* background-color: beige; */
+    display: flex;
+    margin-left: 35%;
+}
+#div_LabelElementContainer{
+    /* background-color: rgb(202, 202, 20); */
+    position: relative;
+}
+#div_ActionContainer{
+    /* background-color: rgb(125, 149, 203); */
+    align-items: center;
+}
+#div_FormSubmitContainer{
+    margin-left: 40%;
+}
+#div_Header{
+    /* background-color: rgb(108, 108, 251) ; */
+    height: 10%;
+    animation-name: div_Header_Animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    color: rgb(241, 37, 61);
+}
+@keyframes div_Header_Animation{
+    0%{top: 0%; left: 10%;}
+    25%{top: 0%; left: 30%;}
+    50%{top: 0%; left: 50;}
+    75%{top: 0%; left: 70%;}
+    100%{top: 0%; left: 90%;}
+}
+input{
+    float: right;
+}
+th{
+    color: rgb(71, 42, 1);
+    background-color: rgb(173, 150, 249);
+}
+td{
+    width:150px;   
+}
+#button_Submit{
+    background-color: rgb(173, 150, 249);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+#button_Edit, #button_InputRow_Save {
+    background-color: rgb(251, 164, 83);
+}
+#button_Delete, #button_InputRow_Delete {
+    background-color: rgb(227, 50, 62);
+    color: white;
+}
+#button_Copy, #button_InputRow_Copy {
+    background-color: rgb(84, 245, 127);
+}
+#button_Go{
+    background-color : rgb(160, 160, 252);
+    border-radius: 10px;
+    border-color:gray"
+}
+#button_AddRow{
+    background-color : rgb(212, 48, 245);
+    border-radius: 10px;
+    padding: 3px;
+    color: white;
+    font-weight: bolder;
+    font-size: large;
+    border-color: rgb(103, 35, 1);    
+}

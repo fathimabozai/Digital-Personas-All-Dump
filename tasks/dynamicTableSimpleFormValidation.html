@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation with Dynamic Table</title>
+    <link rel="stylesheet" href="css/dynamicTableSimpleFormValidation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>  
+    <div id="div_MyContainer">
+        <div id="div_FormConatiner">
+            <form id="formSimple" name="formSimple">
+                <div id="div_FormDataContainer">
+                    <div id="div_LabelElementContainer">
+                        <!-- <div id="div_Header">                   
+                            <h2 style="float: right;">Employee Registration Form</h2>
+                        </div> -->
+                        <label>Name</label>
+                        <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>&nbsp;
+                        <input type="text" id="input_Name" name="input_Name" placeholder="Enter Name" required><br><br>  
+                        <label>Age</label>
+                        <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>&nbsp;
+                        <input type="text" id="input_Age" name="input_Age" placeholder="Enter Age" required><br><br>          
+                        <label>Mobile</label>
+                        <sup><i class="fa fa-asterisk" style="font-size:10px;color:red"></i></sup>&nbsp;
+                        <input type="tel" id="input_Mobile" name="input_Mobile" placeholder="Enter Mobile" required maxlength="10" ><br><br>                   
+                        <label>E-Mail</label>
+                        <input type="email" id="input_EMail" name="input_EMail" placeholder="Enter E-Mail"><br><br><br>
+                    </div>                                      
+                </div>  
+            <div id="div_FormSubmitContainer">
+                    <button type="button" value="submit" id="button_Submit" onclick="validate()">SUBMIT</button><br>
+            </div>
+        </form>
+        </div>
+        <div id="div_Search_AddRowContainer">
+            <div id="div_SearchContainer" >
+                <div>
+                    <input id="input_SearchName" placeholder="enter name to search" >
+                </div>
+               <div>
+                    <button id="button_Go" value="go" onclick="findName()">GO</button><br>
+               </div>
+            </div>            
+            <div id="div_AddRowContainer">
+                <button id="button_AddRow" value="go" onclick="addInputRow()" >Add Row</button><br>
+            </div>
+        </div>
+        <div id="div_TableContainer">
+            <center><h2>Employee Details</h2>
+            <table id="table1" border="1px">
+                <thead>
+                    <th style="width:70px">S.No</th>
+                    <th style="width:170px">Name</th>
+                    <th style="width:100px">Age</th>
+                    <th style="width:200px">Mobile</th>
+                    <th style="width:300px">E-Mail</th>
+                    <th style="width:200px;">Actions</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table><br>
+        </center> 
+        </div>
+    </div>
+    <script>
+        var arrayOfObjects = [],newArray=[];
+        var Payload={};
+        var name, nameInput, age, ageInput, mobile, mobileInput, email, emailInput;
+        var index = null;        
+        var selectedButton = null, selectedRow = null;
+        var rowToUpdate = null;
+        var table, tableRow, tableData1, tableData2, tableData3, tableData4, tableData5, tableData6;
+        var inputRowNameInput, inputRowName, inputRowAgeInput, inputRowAge, inputRowMobileInput, inputRowMobile, inputRowEmailInput, inputRowEmail;
+        var regExpName = /^[A-za-z\s]+$/;
+        var regExpAge= /^[0-9]+$/;
+        var regExpMobile = /^[0-9+]+$/;
+        var regExpEMail =/^[A-za-z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;    
+        function validate()
+        { 
+            debugger;           
+            alert('Submit Button clicked');
+                
+                nameInput = document.getElementById("input_Name")
+                name = nameInput.value;
+                ageInput = document.getElementById("input_Age");
+                age = ageInput.value;
+                mobileInput = document.getElementById("input_Mobile");
+                mobile = mobileInput.value;
+                emailInput =document.getElementById("input_EMail");
+                email = emailInput.value;    
+
+                //all data filled
+                if(!name == "" && !age == "" && !mobile == "" && !email == ""){
+                    if(name.match(regExpName)){
+                        nameInput.style.borderColor = "Green";
+                    }else{
+                        nameInput.style.borderColor = "Red";
+                        alert("Enter a Valid name");
+                    }
+                    if(age.match(regExpAge)){
+                        ageInput.style.borderColor = "Green";
+                    }else{
+                        ageInput.style.borderColor = "Red";
+                        alert("Enter a Valid Age");
+                    }
+                    if(mobile.match(regExpMobile)){
+                        mobileInput.style.borderColor = "Green";
+                    }else{
+                        mobileInput.style.borderColor = "Red";
+                        alert("Enter a Valid Mobile Number");
+                    }
+                    if(email.match(regExpEMail)){
+                        emailInput.style.borderColor = "Green";
+                    }else{
+                        emailInput.style.borderColor = "Red";
+                        alert("Enter a Valid Email address");
+                    }
+                    if(name.match(regExpName) && age.match(regExpAge) && mobile.match(regExpMobile) && email.match(regExpEMail)){
+                        alert("Validation successfull");                                                     
+                        Payload = {
+                            "Name" : name[0].toUpperCase()+name.slice(1),
+                            "Age" : age,
+                            "Mobile" :mobile,
+                            "EMail" : email
+                        };                    
+                        if(index == null){
+                            addRow();
+                        }else{
+                            debugger;
+                            update(this);
+                        }
+                    }else{
+                        // alert("Validation not successfull");
+                        document.getElementById("input_Name").value = name;
+                        document.getElementById("input_Age").value = age; 
+                        document.getElementById("input_Mobile").value = mobile; 
+                        document.getElementById("input_EMail").value = email;  
+                    }
+                }
+                //empty email with required data
+                else if((!name == "" && !age == "" && !mobile == "" && email == "")){
+                    if(name.match(regExpName)){
+                        nameInput.style.borderColor = "Green";
+                    }else{
+                        nameInput.style.borderColor = "Red";
+                        alert("Enter a Valid Name");
+                    }
+                    if(age.match(regExpAge)){
+                        ageInput.style.borderColor = "Green";
+                    }else{
+                        ageInput.style.borderColor = "Red";
+                        alert("Enter a Valid Age");
+                    }
+                    if(mobile.match(regExpMobile)){
+                        mobileInput.style.borderColor = "Green";
+                    }else{
+                        mobileInput.style.borderColor = "Red";
+                        alert("Enter a Valid Mobile Number");
+                    }
+                    //match all data except emailid as it is empty
+                    if(name.match(regExpName) && age.match(regExpAge) && mobile.match(regExpMobile)){
+                        alert("Validation successfull");
+                        Payload = {
+                            "Name" : name[0].toUpperCase()+name.slice(1),
+                            "Age" : age,
+                            "Mobile" :mobile,
+                            "EMail" : email
+                        };
+                    debugger;
+                        if(index == null){
+                            addRow();
+                        }else{
+                            debugger;
+                            update(this);
+                        }                    
+                    }else{                    
+                        alert("Validation not successfull");
+                        document.getElementById("input_Name").value = name;
+                        document.getElementById("input_Age").value = age; 
+                        document.getElementById("input_Mobile").value = mobile; 
+                        document.getElementById("input_EMail").value = email;     
+                    }
+                }
+                else{
+                    alert("Fill mandatory fields");
+                } 
+                      
+        }
+        function validateInputRow(){
+            inputRowNameInput = document.getElementById("input_Row_Name");
+                inputRowAgeInput = document.getElementById("input_Row_Age");
+                inputRowMobileInput = document.getElementById("input_Row_Mobile");
+                inputRowEmailInput = document.getElementById("input_Row_EMail");
+
+                inputRowName= inputRowNameInput.value;
+                inputRowAge = inputRowAgeInput.value;
+                inputRowMobile = inputRowMobileInput.value;
+                inputRowEmail = inputRowEmailInput.value;
+
+                if(!inputRowName == "" && !inputRowAge == "" && !inputRowMobile == "" && !inputRowEmail == ""){
+                    if(inputRowName.match(regExpName)){
+                        inputRowNameInput.style.borderColor = "Green";
+                    }else{
+                        inputRowNameInput.style.borderColor = "Red";
+                        alert("Enter a Valid name");
+                    }
+                    if(inputRowAge.match(regExpAge)){
+                        inputRowAgeInput.style.borderColor = "Green";
+                    }else{
+                        inputRowAgeInput.style.borderColor = "Red";
+                        alert("Enter a Valid Age");
+                    }
+                    if(inputRowMobile.match(regExpMobile)){
+                        inputRowMobileInput.style.borderColor = "Green";
+                    }else{
+                        inputRowMobileInput.style.borderColor = "Red";
+                        alert("Enter a Valid Mobile Number");
+                    }
+                    if(inputRowEmail.match(regExpEMail)){
+                        inputRowEmailInput.style.borderColor = "Green";
+                    }else{
+                        inputRowEmailInput.style.borderColor = "Red";
+                        alert("Enter a Valid Email address");
+                    }
+                    if(inputRowName.match(regExpName) && inputRowAge.match(regExpAge) && inputRowMobile.match(regExpMobile) && inputRowEmail.match(regExpEMail)){
+                        alert("Validation successfull");                                                     
+                        Payload = {
+                            "Name" : inputRowName[0].toUpperCase()+inputRowName.slice(1),
+                            "Age" : inputRowAge,
+                            "Mobile" :inputRowMobile,
+                            "EMail" : inputRowEmail
+                        };                    
+                        if(index == null){
+                            addRow();
+                        }else{
+                            debugger;
+                            update(this);
+                        }
+                    }else{
+                        // alert("Validation not successfull");
+                        document.getElementById("input_Row_Name").value = inputRowName;
+                        document.getElementById("input_Row_Age").value = inputRowAge; 
+                        document.getElementById("input_Row_Mobile").value = inputRowMobile; 
+                        document.getElementById("input_Row_EMail").value = inputRowEmail;  
+                    }
+                }
+                //empty email with required data
+                else if((!inputRowName == "" && !inputRowAge == "" && !inputRowMobile == "" && inputRowEmail == "")){
+                    if(inputRowName.match(regExpName)){
+                        inputRowNameInput.style.borderColor = "Green";
+                    }else{
+                        inputRowNameInput.style.borderColor = "Red";
+                        alert("Enter a Valid Name");
+                    }
+                    if(inputRowAge.match(regExpAge)){
+                        inputRowAgeInput.style.borderColor = "Green";
+                    }else{
+                        inputRowAgeInput.style.borderColor = "Red";
+                        alert("Enter a Valid Age");
+                    }
+                    if(inputRowMobile.match(regExpMobile)){
+                        inputRowMobileInput.style.borderColor = "Green";
+                    }else{
+                        inputRowMobileInput.style.borderColor = "Red";
+                        alert("Enter a Valid Mobile Number");
+                    }
+                    //match all data except emailid as it is empty
+                    if(inputRowName.match(regExpName) && inputRowAge.match(regExpAge) && inputRowMobile.match(regExpMobile)){
+                        alert("Validation successfull");
+                        Payload = {
+                            "Name" : inputRowName[0].toUpperCase()+inputRowName.slice(1),
+                            "Age" : inputRowAge,
+                            "Mobile" :inputRowMobile,
+                            "EMail" : inputRowEmail
+                        };
+                    debugger;
+                        if(index == null){
+                            addRow();
+                        }else{
+                            debugger;
+                            update(this);
+                        }                    
+                    }else{                    
+                        alert("Validation not successfull");
+                        document.getElementById("input_Row_Name").value = inputRowName;
+                        document.getElementById("input_Row_Age").value = inputRowAge; 
+                        document.getElementById("input_Row_Mobile").value = inputRowMobile; 
+                        document.getElementById("input_Row_EMail").value = inputRowEmail;     
+                    }
+                }
+                else{
+                    alert("Fill mandatory fields");
+                }
+        }
+        function addRow(){
+             debugger;
+             if(index == null){
+                arrayOfObjects.push(Payload);
+             }else{
+                arrayOfObjects.push(newArray);
+            }
+            
+            //creates table,tr, td
+            table = document.getElementById("table1");
+            tableRow = table.insertRow();
+            tableData1 = tableRow.insertCell(0);
+            tableData2 = tableRow.insertCell(1);
+            tableData3 = tableRow.insertCell(2);
+            tableData4 = tableRow.insertCell(3);
+            tableData5 = tableRow.insertCell(4);
+            tableData6 = tableRow.insertCell(5);
+
+            tableData1.innerHTML = arrayOfObjects.length;          
+            debugger;
+            for(var i=0; i<arrayOfObjects.length; i++){  
+                tableData2.innerHTML = arrayOfObjects[i].Name;
+                tableData3.innerHTML = arrayOfObjects[i].Age;
+                tableData4.innerHTML = arrayOfObjects[i].Mobile;
+                tableData5.innerHTML = arrayOfObjects[i].EMail; 
+                createButtons(); 
+            }        
+            table.appendChild(tableRow);            
+            document.getElementById("formSimple").reset();
+            nameInput.style.borderColor = "gray";
+            ageInput.style.borderColor = "gray";
+            mobileInput.style.borderColor = "gray";
+            emailInput.style.borderColor = "gray";
+
+        }
+
+        function addInputRow(){
+
+            debugger;
+            table = document.getElementById("table1");
+            tableRow = table.insertRow();
+            tableData1 = tableRow.insertCell(0);
+            tableData2 = tableRow.insertCell(1);
+            tableData3 = tableRow.insertCell(2);
+            tableData4 = tableRow.insertCell(3);
+            tableData5 = tableRow.insertCell(4);
+            tableData6 = tableRow.insertCell(5);
+
+            tableData2.innerHTML = '<input type="text" placeholder="Enter Name here" id="input_Row_Name" required>';
+            tableData3.innerHTML = '<input type="text" placeholder="Enter Age here" id="input_Row_Age" required>';
+            tableData4.innerHTML = '<input type="tel" placeholder="Enter Mobile here" id="input_Row_Mobile" required maxlength="10">';
+            tableData5.innerHTML = '<input type="email" placeholder="Enter Email here" id="input_Row_EMail">';
+            tableData6 = createInputRowButtons(); 
+        }
+
+        function editRow(button){
+            debugger;
+            var editbtn = document.getElementById("button_Edit");
+            index = button.parentNode.parentNode.rowIndex;
+            selectedButton = button;            
+            if(selectedButton.innerHTML == "Edit"){
+                document.getElementById("input_Name").value = arrayOfObjects[index-1].Name;
+                document.getElementById("input_Age").value = arrayOfObjects[index-1].Age;
+                document.getElementById("input_Mobile").value = arrayOfObjects[index-1].Mobile;
+                document.getElementById("input_EMail").value = arrayOfObjects[index-1].EMail;
+                //change Edit text to save          
+                selectedButton.innerHTML = "Save";
+                editbtn.contentEditable = false;                
+            } 
+            else{
+                selectedRow = button.parentNode.parentNode;
+                validate();
+                return selectedRow;
+            }       
+        } 
+
+        function editInputRow(button){
+            debugger;
+            var inputRowEditBtn = document.getElementById("button_InputRow_Save");          
+            index = button.parentNode.parentNode.rowIndex;
+            selectedButton = button;
+            if(selectedButton.innerHTML == "Edit"){
+                //change text to input 
+                //read table
+                var currentInputRow = button.parentNode.parentNode;
+                var cells= currentInputRow.cells;
+                currentInputRow.cells[1].innerHTML ='<input type="text" placeholder="Enter Name here" id="input_Row_Name" required>' 
+                currentInputRow.cells[2].innerHTML ='<input type="text" placeholder="Enter Age here" id="input_Row_Age" required>' 
+                currentInputRow.cells[3].innerHTML ='<input type="tel" placeholder="Enter Mobile here" id="input_Row_Mobile" required maxlength="10">' 
+                currentInputRow.cells[4].innerHTML ='<input type="email" placeholder="Enter Email here" id="input_Row_EMail">' 
+
+                document.getElementById("input_Row_Name").value = arrayOfObjects[index-1].Name;
+                document.getElementById("input_Row_Age").value = arrayOfObjects[index-1].Age;
+                document.getElementById("input_Row_Mobile").value = arrayOfObjects[index-1].Mobile;
+                document.getElementById("input_Row_EMail").value = arrayOfObjects[index-1].EMail;
+                //change Edit text to save          
+                selectedButton.innerHTML = "Save";
+                // inputRowEditBtn.contentEditable = false;                
+            } 
+            else{
+                selectedRow = button.parentNode.parentNode;
+                validateInputRow();
+                return selectedRow;
+            }              
+        }
+
+        function deleteRow(button){
+           if(confirm("Are you sure you want to delete ?")){
+                debugger;
+                index = button.parentNode.parentNode.rowIndex;
+                selectedRow = button.parentNode.parentNode;
+                cells= selectedRow.cells;
+                //deletes specific row from table
+                table.deleteRow(index);
+                //delete specific object from Array
+                var elementToBeDeleted = arrayOfObjects[index-1];
+                var objectToRemoveAtIndex = arrayOfObjects.indexOf(elementToBeDeleted);
+                arrayOfObjects.splice(objectToRemoveAtIndex, 1);
+               
+                var newRows = [];
+                newRows = table.rows;
+                //s.no auto update
+                for(i=1; i<=arrayOfObjects.length; i++){
+                   newRows[i].cells[0].innerHTML = i;
+                }
+            }
+             else{
+                 alert(`User cancelled Delete Action!`)
+            }            
+         }
+
+        function copyRow(button){
+            debugger;
+            index = button.parentNode.parentNode.rowIndex;
+            newArray = arrayOfObjects[index-1];
+            addRow();
+        }
+
+        function update(button){
+            debugger;
+            //  tableData1 = arrayOfObjects.length;
+            cells = selectedRow.cells;
+            arrayOfObjects[index-1] = Payload;
+            cells[0].innerHTML = selectedRow.rowIndex;
+            cells[1].innerHTML = Payload.Name;
+            cells[2].innerHTML = Payload.Age;
+            cells[3].innerHTML = Payload.Mobile;
+            cells[4].innerHTML = Payload.EMail;
+
+            selectedButton.innerHTML = "Edit";
+            // editbtn.contentEditable = false;
+            document.getElementById("formSimple").reset();    
+        }            
+
+        function createButtons(){
+            var editButton = "<button type='submit' id='button_Edit' value='submit' onclick='editRow(this)'>Edit</button>&nbsp;"
+            var deleteButton = "<button type='submit' id='button_Delete' value='submit' onclick='deleteRow(this)'>Delete</button>&nbsp";
+            var copyButton = "<button type='submit' id='button_Copy' value='submit' onclick='copyRow(this)'>Copy</button>&nbsp";
+            tableData6.innerHTML = editButton+deleteButton+copyButton;        
+        }
+
+        function createInputRowButtons(){
+            var saveInputRowButton = "<button type='submit' id='button_InputRow_Save' value='submit' onclick='editInputRow(this)'>Save</button>&nbsp;"
+            var deleteInputRowButton = "<button type='submit' id='button_InputRow_Delete' value='submit' onclick='deleteRow(this)'>Delete</button>&nbsp";
+            // var copyInputRowButton = "<button type='submit' id='button_InputRow_Copy' value='submit' onclick='copyRow(this)'>Copy</button>&nbsp";
+            tableData6.innerHTML = saveInputRowButton+deleteInputRowButton; 
+        }
+
+        function findName(){
+            // debugger;
+            searchName = document.getElementById("input_SearchName").value;
+            for(i=0;i<arrayOfObjects.length;i++){
+                if(searchName.toLowerCase() === arrayOfObjects[i].Name.toLowerCase()){
+                console.log(arrayOfObjects[i]);              
+                }
+            }
+            // clears the search input after Go
+            document.getElementById("input_SearchName").value = "";   
+       }
+    </script>
+</body>
+</html>

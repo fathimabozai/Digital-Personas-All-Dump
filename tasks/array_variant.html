@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicates</title>
+</head>
+<body>
+    <label for="inputNumber">Enter numbers: </label>
+    <input id="inputNumber" type="text" placeholder="Enter numbers"><br><br>
+    <button type="submit" value="submit" onclick="findDuplicates()">Submit</button>
+    <p id="paraText"></p>
+    <script>
+        // function removeDuplicates(){
+        //     debugger;
+        //     var inputValue = document.getElementById("inputNumber").value;
+        //     var array = Array.from(inputValue,Number).map(Number);
+        //     var unique=[];
+        //     for(i=0;i<array.length;i++){
+        //         if(unique.indexOf(array[i])=== -1){
+        //         unique.push(array[i]);
+        //     }
+        //     document.getElementById("paraText").innerHTML = `Array with No Duplictaes is : ${unique.sort()}`;
+        //     }
+        // }
+        function findDuplicates(){
+            debugger;
+            var inputValue = document.getElementById("inputNumber").value;
+            var array = Array.from(inputValue,Number).map(Number);
+            var duplicates=array.filter((item, index) =>array.indexOf(item) !== index);
+            var duplicateArray = Array.from(new Set(duplicates));
+            //var sortedDuplicateArray = duplicateArray.sort();
+            document.getElementById("paraText").innerHTML = `Repeated Elements in the array are : ${duplicateArray.sort()}`;
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="input_File">Attach a File: </label>&nbsp;&nbsp;
+    <input type="file" id="input_File"><br><br>
+    <button type="submit" id="button_Extension" value="extension" onclick="alertMessage()">Extension</button>
+    
+    <script>
+        function alertMessage(){
+            var filePath = document.getElementById("input_File").value;
+            console.log(filePath)
+            var extension = filePath.split(".").pop();
+            alert("The extension of chosen input is : " + extension);
+        }
+    </script>
+</body>
+</html>
